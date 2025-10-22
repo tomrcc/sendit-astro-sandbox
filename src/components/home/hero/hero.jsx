@@ -9,7 +9,9 @@ export default function HomeHero(block) {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="hero-two-content">
-              <h1 className="mb-4">{block.title}</h1>
+              <h1 data-editable="text" data-props="title" className="mb-4">
+                {block.title}
+              </h1>
               <div
                 className="mb-7 w-xxl-80"
                 dangerouslySetInnerHTML={{
@@ -18,10 +20,7 @@ export default function HomeHero(block) {
               />
               <div className="">
                 {block.button && (
-                  <a
-                    href={block.button.link}
-                    className="btn btn-primary btn-lg"
-                  >
+                  <a href={block.button.link} className="btn btn-primary btn-lg">
                     {" "}
                     {block.button.text}{" "}
                   </a>
