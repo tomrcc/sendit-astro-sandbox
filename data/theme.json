@@ -1,6 +1,7 @@
 {
-  "primary_color": "#e53b2a",
-  "secondary_color": "#fffbf3",
-  "anchor_color": "#ffba08",
-  "background_effects_color": "#faaa8f"
+  "theme": {
+    "primary_color": "#e71818",
+    "secondary_color": "#ffffff",
+    "anchor_color": "#f5e30d"
+  }
 }

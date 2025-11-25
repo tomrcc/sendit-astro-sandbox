@@ -8,8 +8,8 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
-  - _bookshop_name: about/hero
+contentBlocks:
+  - _name: about/hero
     title: On a mission to change email marketing
     description: We're here to breathe new air into email marketing and help grow your business.
     hero_images:

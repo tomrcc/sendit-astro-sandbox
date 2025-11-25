@@ -8,8 +8,8 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
-  - _bookshop_name: global/login
+contentBlocks:
+  - _name: global/login
     title: Log In
     fullname:
       heading: Full Name

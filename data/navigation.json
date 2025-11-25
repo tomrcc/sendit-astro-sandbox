@@ -1,5 +1,6 @@
 {
   "logo": "/images/logo.svg",
+  "logo_alt": "Company logo",
   "nav_items": [
     {
       "text": "Home",
@@ -33,6 +34,10 @@
         {
           "dropdown_text": "All Articles",
           "dropdown_link": "/blog"
+        },
+        {
+          "dropdown_text": "Blog Showcase",
+          "dropdown_link": "/blog/blog-showcase"
         },
         {
           "dropdown_text": "Marketing",

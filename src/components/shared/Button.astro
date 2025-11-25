@@ -1,0 +1,50 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
+  class?: string;
+  text?: string;
+  label?: string;
+  [key: string]: any;
+}
+
+const { href, variant = "primary", size = "lg", text, label, class: className = "", ...rest } = Astro.props as Props;
+
+// Check for conflicting usage
+const hasSlotContent = await Astro.slots.has("default");
+
+// This will cause a TypeScript error in the consuming component
+if (text && hasSlotContent) {
+  // Force a compile-time error by assigning string to never
+  const _compileError: never = "COMPILE ERROR: Cannot use both 'text' prop and slot children in Button component" as never;
+  throw new Error("Button: Cannot use both text prop and slot children");
+}
+
+const baseClasses = "inline-flex items-center font-extrabold border transition-all duration-300 ease-in-out tracking-wider";
+
+const variantClasses = {
+  primary: "text-secondary bg-primary hover:bg-secondary hover:text-primary border-primary",
+  secondary: "text-primary bg-secondary hover:bg-primary hover:text-white border-primary",
+};
+
+const sizeClasses = {
+  sm: "px-6 py-3 text-base rounded-xl",
+  md: "px-7 py-3.5 text-lg rounded-xl",
+  lg: "px-8 py-4 text-lg rounded-2xl",
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a data-astro-prefetch href={href} class={classes} {...rest}>
+      {text ? label ? <editable-text data-prop={label}>{text}</editable-text> : text : <slot />}
+    </a>
+  ) : (
+    <button class={classes} {...rest}>
+      {text ? label ? <editable-text data-prop={label}>{text}</editable-text> : text : <slot />}
+    </button>
+  )
+}

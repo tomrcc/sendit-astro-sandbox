@@ -1,0 +1,19 @@
+label: Counter
+description: Counter section
+icon: functions
+tags: []
+value:
+  title: Design for your
+  title_suffix: Business
+  description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
+  alternate_style: false
+  numbers:
+  - prefix: $
+    number: 300
+    suffix: m
+    text: Venture capital raised
+  _name: global/counter
+_inputs:
+  description:
+    type: markdown
+preview: null

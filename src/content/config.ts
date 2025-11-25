@@ -27,29 +27,34 @@ const blogCollection = defineCollection({
       image_alt: z.string(),
     }),
     seo: seoSchema,
-    draft: z.boolean()
+    draft: z.boolean(),
   }),
 });
 
-const pageSchema = z.object({
-  _schema: z.any().optional(),
-  hidden: z.boolean().optional().default(false),
-  title: z.string(),
-  content_blocks: z.array(z.any()),
-  page_size: z.undefined(),
-  description: z.undefined(),
-  seo: seoSchema,
-});
+// Standard content page schema with camelCase `contentBlocks`
+const contentBlocksSchema = z.object({ contentBlocks: z.array(z.any()) });
 
-const paginatedCollectionSchema = z.object({
-  _schema: z.literal("paginated_collection"),
-  hidden: z.literal(true).optional().default(true),
-  title: z.string(),
-  description: z.string().optional(),
-  page_size: z.number().positive(),
-  content_blocks: z.undefined(),
-  seo: seoSchema,
-});
+const pageSchema = z
+  .object({
+    _schema: z.any().optional(),
+    hidden: z.boolean().optional().default(false),
+    title: z.string(),
+    page_size: z.undefined(),
+    description: z.undefined(),
+    seo: seoSchema,
+  })
+  .and(contentBlocksSchema);
+
+const paginatedCollectionSchema = z
+  .object({
+    _schema: z.literal("paginated_collection"),
+    hidden: z.literal(true).optional().default(true),
+    title: z.string(),
+    description: z.string().optional(),
+    page_size: z.number().positive(),
+    seo: seoSchema,
+  })
+  .and(z.object({ contentBlocks: z.undefined().optional() }));
 
 const pagesCollection = defineCollection({
   schema: z.union([paginatedCollectionSchema, pageSchema]),

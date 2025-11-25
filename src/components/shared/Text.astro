@@ -1,0 +1,74 @@
+---
+// Base props that are common to all variants
+interface BaseProps {
+  size?: "sm" | "base" | "lg" | "xl" | "2xl";
+  class?: string;
+  markdown?: boolean;
+  [key: string]: any;
+}
+
+// Props when using text with editable label (no children allowed)
+interface TextProps extends BaseProps {
+  text: string;
+  label?: string;
+}
+
+// Props when using children (no text/label allowed)
+interface ChildrenProps extends BaseProps {
+  text?: never;
+  label?: never;
+}
+
+// Union type that enforces either text OR children, but not both
+export type Props = TextProps | ChildrenProps;
+
+const { size = "base", text, label, markdown = false, class: className = "", ...rest } = Astro.props;
+
+// Runtime check to ensure proper usage
+const hasSlotContent = await Astro.slots.has("default");
+if (text && hasSlotContent) {
+  throw new Error('Text component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
+}
+
+// Import markdown-it only if needed
+let md;
+if (markdown && text) {
+  const MarkdownIt = (await import("markdown-it")).default;
+  md = new MarkdownIt({ html: true });
+}
+
+// Text size styles
+const sizeStyles = {
+  sm: "text-sm",
+  base: "text-base",
+  lg: "text-lg",
+  xl: "text-xl",
+  "2xl": "text-2xl",
+};
+
+const classes = `text-gray-600 ${sizeStyles[size]} ${className}`;
+---
+
+{
+  text ? (
+    label ? (
+      markdown ? (
+        <div class={classes} data-editable="text" data-prop={label} set:html={md?.render(text) ?? ""} {...rest} />
+      ) : (
+        <p class={classes} {...rest}>
+          <editable-text data-prop={label}>{text}</editable-text>
+        </p>
+      )
+    ) : markdown && md ? (
+      <div class={classes} set:html={md?.render(text) ?? ""} {...rest} />
+    ) : (
+      <p class={classes} {...rest}>
+        {text}
+      </p>
+    )
+  ) : (
+    <div class={classes} {...rest}>
+      <slot />
+    </div>
+  )
+}

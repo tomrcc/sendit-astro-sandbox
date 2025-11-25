@@ -1,12 +1,12 @@
 ---
-import Page from "@shared/page";
-import Layout, { SEOProps } from "./Layout.astro";
+import Page from "@shared/page.astro";
+import Layout from "./Layout.astro";
 
 type Props = {
   frontmatter: {
     title: string;
-    content_blocks: Array<Record<string, any>>;
-    seo?: SEOProps;
+    contentBlocks: Array<Record<string, any>>;
+    seo?: any;
   };
 };
 
@@ -16,6 +16,6 @@ if (!Astro.props.frontmatter) {
 const props = Astro.props.frontmatter;
 ---
 
-<Layout {...props}>
-  <Page bookshop:live contentBlocks={props.content_blocks} />
+<Layout title={props.title} seo={props?.seo}>
+  <Page contentBlocks={props.contentBlocks} />
 </Layout>

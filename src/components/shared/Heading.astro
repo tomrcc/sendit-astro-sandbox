@@ -1,0 +1,54 @@
+---
+// Base props that are common to all variants
+interface BaseProps {
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  size?: 1 | 2 | 3 | 4 | 5 | 6;
+  editable?: boolean;
+  class?: string;
+  [key: string]: any;
+}
+
+// Props when using text with editable label (no children allowed)
+interface TextProps extends BaseProps {
+  text: string;
+  label?: string;
+}
+
+// Props when using children (no text/label allowed)
+interface ChildrenProps extends BaseProps {
+  text?: never;
+  label?: never;
+}
+
+// Union type that enforces either text OR children, but not both
+export type Props = TextProps | ChildrenProps;
+
+const { level = 1, size, text, label, editable = true, class: className = "", ...rest } = Astro.props;
+
+// Runtime check to ensure proper usage
+const hasSlotContent = await Astro.slots.has("default");
+if (text && hasSlotContent) {
+  throw new Error('Heading component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
+}
+
+// Default heading styles based on level/size
+const levelStyles = {
+  1: "text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl",
+  2: "text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl",
+  3: "text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl",
+  4: "text-xl font-bold leading-tight sm:text-2xl md:text-3xl lg:text-4xl",
+  5: "text-lg font-bold leading-tight sm:text-xl md:text-2xl lg:text-3xl",
+  6: "text-base font-bold leading-tight sm:text-lg md:text-xl lg:text-2xl",
+};
+
+// Use size prop if provided, otherwise fall back to level
+const styleLevel = size || level;
+const classes = `${levelStyles[styleLevel]} ${className}`;
+
+// Dynamic component based on level (semantic level, not visual size)
+const Tag = `h${level}` as any;
+---
+
+<Tag class={classes} {...rest}>
+  {text ? label && editable ? <editable-text data-prop={label}>{text}</editable-text> : text : <slot />}
+</Tag>

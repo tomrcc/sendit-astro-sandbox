@@ -1,0 +1,11 @@
+label: Home Video
+description: Home Video section
+icon: videocam
+tags: []
+value:
+  image: /images/video/video-thum.jpg
+  image_alt: Thumbnail for video
+  video_url: https://vimeo.com/45830194
+  _name: home/video
+_inputs: {}
+preview: null

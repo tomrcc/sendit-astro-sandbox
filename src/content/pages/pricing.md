@@ -8,12 +8,11 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
-  - _bookshop_name: pricing/hero
+contentBlocks:
+  - _name: global/simple-hero
     title: A plan for everyone
     description: Sendit is easy to get started and we have a pricing plan for businesses of all sizes.
-
-  - _bookshop_name: pricing/table
+  - _name: pricing/table
     pricing_tier:
       - tier: Free
         highlight_tier: false
@@ -102,8 +101,7 @@ content_blocks:
         button:
           link: /signup
           text: Try This Free
-
-  - _bookshop_name: global/faq
+  - _name: global/faq
     title: Have
     title_suffix: Questions?
     description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.

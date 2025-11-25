@@ -8,14 +8,17 @@ Sendit is a polished, marketing website template for Astro. Browse through a [li
 
 ## Features
 
-- Pre-built pages
-- Pre-styled components
-- Blog with pagination and category pages
-- Configurable navigation and footer
-- Multiple hero options
-- Configurable theme colors
-- Optimised for editing in [CloudCannon](https://cloudcannon.com/)
-- Live, visual editing powered by [Bookshop](https://github.com/CloudCannon/bookshop)
+- **Modern Architecture**: Built with Astro and React for optimal performance
+- **Tailwind CSS**: Custom styling with utility-first CSS framework
+- **Component Library**: Reusable, componentized architecture for better maintainability
+- **Visual Editing**: Advanced visual editing capabilities with [CloudCannon](https://cloudcannon.com/)
+- **Interactive Components**: Custom React hooks for interactivity
+- **Image Optimization**: Astro's built-in image optimization for all images
+- **Accessibility**: Fully accessible navigation and components
+- **Dynamic Theming**: Real-time theme color updates.
+- **Blog System**: Complete blog with pagination and category pages
+- **SEO Optimized**: Pre-configured for search engine optimization
+- **Live Editing**: Seamless content editing experience in CloudCannon
 
 ## Setup
 
@@ -24,34 +27,53 @@ Sendit is a polished, marketing website template for Astro. Browse through a [li
 
 ## Develop
 
-Sendit is built with [Astro](https://astro.build/).
+Sendit is built with [Astro](https://astro.build/), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com/) for a modern, performant development experience.
 
 ```bash
-$ npm install
-$ npm run dev
+npm install
+npm run dev
 ```
+
+### Tech Stack
+
+- **Astro**: Static site generation with component islands
+- **React**: Interactive components with custom hooks
+- **Tailwind CSS**: Utility-first CSS framework
+- **TypeScript**: Type-safe development experience
 
 ## Editing
 
-Sendit is set up for adding, updating and removing pages, components, posts, portfolio items, company details and footer elements in [CloudCannon](https://app.cloudcannon.com/).
+Sendit features advanced visual editing capabilities with CloudCannon's split configuration, allowing for intuitive content management and real-time preview.
 
-### Posts
+### Visual Editing
 
-- Add, update or remove a post in the _Posts_ collection.
-- Change the defaults when new posts are created in `content/posts/_defaults.md`.
+- **Live Preview**: See changes instantly as you edit
+- **Component-based**: Edit reusable components directly in context
+- **Interactive Elements**: Visual editing works seamlessly with React components
+- **Split Configuration**: Modern CloudCannon setup for enhanced editing experience
 
-### Company details
+### Content Management
 
-- Reused around the site to save multiple editing locations.
-- Set in the _Data_ / _Company_ section.
+#### Posts
 
-### Nav/footer details
+- Add, update or remove posts in the _Posts_ collection
+- Automatic pagination and category organization
+- Rich content editing with live preview
 
-- Reused around the site to save multiple editing locations.
-- Set in the _Site Navigation_ section with respective names
+#### Site Configuration
 
-### Theme colors
+- **Company Details**: Centralized company information reused across the site
+- **Navigation**: Fully accessible, responsive navigation management
+- **Footer**: Configurable footer elements and links
 
-- Theme colors can be set in  _Theme Palette_
-- The main colors are set and variants of them are computed
-- The colors will update on the next build
+#### Theme Customization
+
+- **Dynamic Colors**: Update theme colors in real-time through CloudCannon
+- **Tailwind Integration**: Colors automatically propagate through the design system
+
+### Interactive Components
+
+- Custom React hooks handle all interactive functionality
+- Lightweight with minimal external dependencies
+- Accessible by default with proper ARIA attributes
+- Optimized for performance with Astro's component islands

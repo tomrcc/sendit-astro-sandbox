@@ -1,0 +1,24 @@
+label: Feature
+description: Feature section
+icon: stars
+tags: []
+value:
+  image: /images/feature/feature-card-one.png
+  image_alt: Message inbox
+  title: Text Message in One Minute
+  description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
+  button:
+    link: /signup
+    text: Try This Free
+  reversed: false
+  _name: global/feature
+_inputs:
+  description:
+    type: markdown
+  image:
+    type: image
+    options:
+      width: 696
+      height: 752
+      resize_style: crop
+preview: null

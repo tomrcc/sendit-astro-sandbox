@@ -9,18 +9,18 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
-  - _bookshop_name: home/hero
-    title: Beautiful email campaigns
+contentBlocks:
+  - _name: global/hero
+    title: Beautiful web campaigns
     description: >-
       With Sendit, you can quickly create beautiful rich emails that capture a
       reader's attention, engage them, and convert them into customers.
-    image: /images/hero/hero-image-2.png
+    image: /images/hero/hero-image.avif
     image_alt: Reports dashboard
     button:
       text: Try This Free
       link: /signup/
-  - _bookshop_name: global/counter
+  - _name: global/counter
     title: Scale your
     title_suffix: Business
     description: >-
@@ -29,33 +29,33 @@ content_blocks:
     alternate_style: false
     numbers:
       - prefix: $
-        number: 200
+        numberValue: 211
         suffix: m
         text: Venture capital raised
       - prefix:
-        number: 2016
+        numberValue: 2016
         suffix:
         text: Established in
       - prefix:
-        number: 40
+        numberValue: 40
         suffix: +
         text: Amazing team members
       - prefix:
-        number: 4322
+        numberValue: 4322
         suffix: +
         text: Active users and growing
-  - _bookshop_name: home/video
-    image: /images/video/video-thum.jpg
+  - _name: home/video
+    image: /images/video/video-thum.avif
     image_alt: Thumbnail for video
-    video_url: https://vimeo.com/45830194
-  - _bookshop_name: global/header
+    video_url: 45830194
+  - _name: global/header
     title: "Sendit "
     title_suffix: Features
     remove_top_padding: true
     description: >-
       Our platform offers the most advanced features including automated email
       content creation, dynamic personalization, and customer segmentation.
-  - _bookshop_name: global/feature
+  - _name: global/feature
     image: /images/feature/feature-card-one.png
     image_alt: Message inbox
     title: Email Campaign in one minute
@@ -66,7 +66,7 @@ content_blocks:
       link: /signup
       text: Try This Free
     reversed: false
-  - _bookshop_name: global/feature
+  - _name: global/feature
     image: /images/feature/feature-card-two.png
     image_alt: Visitor chart
     title: See every Lead in one Place
@@ -77,7 +77,7 @@ content_blocks:
       link: /signup
       text: Try This Free
     reversed: true
-  - _bookshop_name: global/feature
+  - _name: global/feature
     image: /images/feature/feature-card-three.png
     image_alt: File upload
     title: 100% free uploads
@@ -89,7 +89,7 @@ content_blocks:
       link: /signup
       text: Try This Free
     reversed: false
-  - _bookshop_name: global/testimonial
+  - _name: global/testimonial
     title: Build relationships that
     title_suffix: last
     description: >-
