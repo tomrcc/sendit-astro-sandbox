@@ -78,12 +78,9 @@ const { title, description, button, video } = Astro.props as Props;
       <!-- Video Section -->
       <div class="lg:order-2">
         {video && (
-          <div class="relative" data-editable="object" data-prop="video">
+          <div class="relative">
             <div class="rounded-[20px] overflow-hidden relative">
               <Image
-                data-editable="image"
-                data-prop-src="image"
-                data-prop-alt="image_alt"
                 src={video.image}
                 alt={video.image_alt}
                 width={648}
@@ -103,8 +100,6 @@ const { title, description, button, video } = Astro.props as Props;
                   onclick="document.getElementById('about-video-modal').showModal()"
                   class="relative w-[86px] h-[86px] border-2 border-[#e53b2a] rounded-full bg-[#e53b2a] z-10 outline-none flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95"
                   aria-label="Play video"
-                  data-editable="url"
-                  data-prop="link"
                 >
                   <svg
                     width="28"
