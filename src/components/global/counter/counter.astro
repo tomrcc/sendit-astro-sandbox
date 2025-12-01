@@ -6,7 +6,7 @@ import Heading from "../../shared/Heading.astro";
 const md = new MarkdownIt({ html: true });
 
 // Receive all props as the block for CloudCannon compatibility
-const { title, title_suffix, description, numbers, alternate_style, _name } = Astro.props;
+const { title, title_suffix, description, numbers, alternate_style } = Astro.props;
 
 interface CounterNumber {
   prefix?: string;
