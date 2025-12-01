@@ -44,11 +44,11 @@ const { title, team_members } = Astro.props;
                   />
                 </div>
                 <div class="space-y-2">
-                  <h3 class="text-xl font-semibold text-gray-900">
-                    <editable-text data-prop="name">{member.name}</editable-text>
+                  <h3 class="text-xl font-semibold text-gray-900" data-prop="name">
+                    {member.name}
                   </h3>
-                  <p class="text-gray-600">
-                    <editable-text data-prop="designation">{member.designation}</editable-text>
+                  <p class="text-gray-600" data-prop="designation">
+                    {member.designation}
                   </p>
                 </div>
               </div>
