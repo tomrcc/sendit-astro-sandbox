@@ -40,48 +40,48 @@ export interface Props {
         </div>
       </div>
       <div class="w-full">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 items-center justify-center text-center"
-          data-editable="array"
-          data-prop="numbers">
-          {
-            numbers &&
+        {numbers && (
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 items-center justify-center text-center"
+            data-editable="array"
+            data-prop="numbers">
+            {
               numbers.map((number: CounterNumber, i: number) => (
-                <div class="relative h-full" data-editable="array-item">
-                  <div
-                    class={`border-t border-r ${alternate_style ? "border-secondary" : "border-muted"} pt-10 px-8 pb-0 2xl:pt-8 2xl:px-8 xl:pt-8 xl:px-4 xl:pb-7 sm:pt-8 sm:px-0 sm:pb-7 ${i === 3 || (i === 1 && "lg:border-r-0") || (i === 3 && "lg:border-r-0") ? "lg:border-r-0" : ""} ${i >= numbers.length - (numbers.length % 4 || 4) ? "lg:border-r-0" : ""}`}>
-                    <div class=" flex justify-center">
-                      {number.prefix && (
-                        <span
-                          class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
-                          style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
-                          data-editable="text"
-                          data-prop="prefix">
-                          {number.prefix}
-                        </span>
-                      )}
-                      <AnimatedNumber
-                        numberValue={number.numberValue}
-                        className="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
-                        style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}
-                        client:load
-                      />
-                      {number.suffix && (
-                        <span
-                          class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
-                          style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
-                          data-editable="text"
-                          data-prop="suffix">
-                          {number.suffix}
-                        </span>
-                      )}
-                    </div>
-                    <p class="text-gray-900 text-base mb-0 sm:px-8 sm:pb-0" data-editable="text" data-prop="text">
-                      {number.text}
-                    </p>
+              <div class="relative h-full" data-editable="array-item">
+                <div
+                  class={`border-t border-r ${alternate_style ? "border-secondary" : "border-muted"} pt-10 px-8 pb-0 2xl:pt-8 2xl:px-8 xl:pt-8 xl:px-4 xl:pb-7 sm:pt-8 sm:px-0 sm:pb-7 ${i === 3 || (i === 1 && "lg:border-r-0") || (i === 3 && "lg:border-r-0") ? "lg:border-r-0" : ""} ${i >= numbers.length - (numbers.length % 4 || 4) ? "lg:border-r-0" : ""}`}>
+                  <div class=" flex justify-center">
+                    {number.prefix && (
+                      <span
+                        class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
+                        style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
+                        data-editable="text"
+                        data-prop="prefix">
+                        {number.prefix}
+                      </span>
+                    )}
+                    <AnimatedNumber
+                      numberValue={number.numberValue}
+                      className="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
+                      style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}
+                      client:load
+                    />
+                    {number.suffix && (
+                      <span
+                        class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
+                        style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
+                        data-editable="text"
+                        data-prop="suffix">
+                        {number.suffix}
+                      </span>
+                    )}
                   </div>
+                  <p class="text-gray-900 text-base mb-0 sm:px-8 sm:pb-0" data-editable="text" data-prop="text">
+                    {number.text}
+                  </p>
                 </div>
-              ))
+              </div>
+            ))
           }
         </div>
       </div>
