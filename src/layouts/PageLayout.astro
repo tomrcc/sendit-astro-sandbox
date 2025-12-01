@@ -5,7 +5,7 @@ import Layout from "./Layout.astro";
 type Props = {
   frontmatter: {
     title: string;
-    contentBlocks: Array<Record<string, any>>;
+    content_blocks: Array<Record<string, any>>;
     seo?: any;
   };
 };
@@ -17,5 +17,5 @@ const props = Astro.props.frontmatter;
 ---
 
 <Layout title={props.title} seo={props?.seo}>
-  <Page contentBlocks={props.contentBlocks} />
+  <Page content_blocks={props.content_blocks} />
 </Layout>

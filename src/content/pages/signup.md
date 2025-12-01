@@ -8,7 +8,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-contentBlocks:
+content_blocks:
   - _name: global/signup
     title: Create Account
     form:

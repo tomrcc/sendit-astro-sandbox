@@ -9,7 +9,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-contentBlocks:
+content_blocks:
   - _name: global/hero
     title: On a mission to change email marketing
     description: >-
@@ -64,33 +64,33 @@ contentBlocks:
       - name: Nikolas Mcconnell
         designation: Co-Founder & CEO
         image: /images/team/1.jpg
-        image_alt: 'Team member: Nikolas Mcconnell'
+        image_alt: "Team member: Nikolas Mcconnell"
       - name: Keiren Mcculloch
         designation: CMO
         image: /images/team/2.jpg
-        image_alt: 'Team member: Keiren Mcculloch'
+        image_alt: "Team member: Keiren Mcculloch"
       - name: Piers Reyes
         designation: Head of Marketing
         image: /images/team/3.jpg
-        image_alt: 'Team member: Piers Reyes'
+        image_alt: "Team member: Piers Reyes"
       - name: Zachary Arias
         designation: Co-founder & CTO
         image: /images/team/4.jpg
-        image_alt: 'Team member: Zachary Arias'
+        image_alt: "Team member: Zachary Arias"
       - name: Harmony Dunlop
         designation: Head of Sales
         image: /images/team/5.jpg
-        image_alt: 'Team member: Harmony Dunlop'
+        image_alt: "Team member: Harmony Dunlop"
       - name: Elize Schwartz
         designation: CRO
         image: /images/team/6.jpg
-        image_alt: 'Team member: Elize Schwartz'
+        image_alt: "Team member: Elize Schwartz"
       - name: Coen Simmons
         designation: Head of Design
         image: /images/team/7.jpg
-        image_alt: 'Team member: Coen Simmons'
+        image_alt: "Team member: Coen Simmons"
       - name: Fran Figureson
         designation: Head of People
         image: /images/team/8.jpg
-        image_alt: 'Team member: Fran Figureson'
+        image_alt: "Team member: Fran Figureson"
 ---

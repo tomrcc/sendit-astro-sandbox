@@ -16,12 +16,12 @@ Object.entries(componentImports).forEach(([path, mod]: [string, any]) => {
   components[rel] = mod.default;
 });
 
-const { contentBlocks } = Astro.props;
+const { content_blocks } = Astro.props;
 ---
 
-<main id="main-content" tabindex="-1" data-editable="array" data-prop="contentBlocks" data-id-key="_name">
+<main id="main-content" tabindex="-1" data-editable="array" data-prop="content_blocks" data-id-key="_name">
   {
-    contentBlocks.map((block: any) => {
+    content_blocks.map((block: any) => {
       const key = block._name;
       const Component = components[key];
       if (!Component) {

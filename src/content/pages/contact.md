@@ -8,7 +8,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-contentBlocks:
+content_blocks:
   - _name: global/simple-hero
     title: Let's talk.
     description: Have a question or suggestion? Feel free to drop us a message!

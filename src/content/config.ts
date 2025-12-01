@@ -31,8 +31,8 @@ const blogCollection = defineCollection({
   }),
 });
 
-// Standard content page schema with camelCase `contentBlocks`
-const contentBlocksSchema = z.object({ contentBlocks: z.array(z.any()) });
+// Standard content page schema with snake_case `content_blocks`
+const contentBlocksSchema = z.object({ content_blocks: z.array(z.any()) });
 
 const pageSchema = z
   .object({
@@ -54,7 +54,7 @@ const paginatedCollectionSchema = z
     page_size: z.number().positive(),
     seo: seoSchema,
   })
-  .and(z.object({ contentBlocks: z.undefined().optional() }));
+  .and(z.object({ content_blocks: z.undefined().optional() }));
 
 const pagesCollection = defineCollection({
   schema: z.union([paginatedCollectionSchema, pageSchema]),
