@@ -9,7 +9,7 @@ interface Props {
   [key: string]: any;
 }
 
-const { href, variant = "primary", size = "lg", text, label, class: className = "", ...rest } = Astro.props as Props;
+const { href, variant = "primary", size = "lg", text, label, class: className = "", ...rest } = Astro.props;
 
 // Check for conflicting usage
 const hasSlotContent = await Astro.slots.has("default");

@@ -4,18 +4,6 @@ import Heading from "@components/shared/Heading.astro";
 import Layout from "@layouts/Layout.astro";
 import ErrorImage from "@public/images/404/error.png";
 import { Image } from "astro:assets";
-import MarkdownIt from "markdown-it";
-const md = new MarkdownIt({ html: true });
-
-// Define TypeScript interfaces
-// interface Props {
-//   description: string;
-//   image: string;
-//   image_alt: string;
-// }
-
-// Receive props directly
-// const { description, image, image_alt } = Astro.props as Props;
 ---
 
 <Layout title="404 Not Found">

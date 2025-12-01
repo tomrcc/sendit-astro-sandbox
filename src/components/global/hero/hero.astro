@@ -28,7 +28,7 @@ interface Props {
 }
 
 // Receive props directly
-const { title, description, button, image, image_alt, hero_images } = Astro.props as Props;
+const { title, description, button, image, image_alt, hero_images } = Astro.props;
 
 // Helper function to get placement class
 const getPlacementClass = (placement: string) => {

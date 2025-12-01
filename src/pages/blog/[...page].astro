@@ -42,7 +42,7 @@ export interface Props {
   page: BlogPaginationResult;
 }
 
-const { page: pagination } = Astro.props as Props;
+const { page: pagination } = Astro.props;
 const posts = pagination.data.filter((post) => !post.data.draft);
 ---
 
