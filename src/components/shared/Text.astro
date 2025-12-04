@@ -1,4 +1,6 @@
 ---
+import MarkdownIt from "markdown-it";
+
 // Base props that are common to all variants
 interface Props {
   size?: "sm" | "base" | "lg" | "xl" | "2xl";
@@ -19,12 +21,7 @@ if (text && hasSlotContent) {
 // Extract CloudCannon-specific attributes for the text wrapper
 const { "data-editable": dataEditable, "data-prop": dataProp, ...elementRest } = rest;
 
-// Import markdown-it only if needed
-let md;
-if (markdown && text) {
-  const MarkdownIt = (await import("markdown-it")).default;
-  md = new MarkdownIt({ html: true });
-}
+const md = new MarkdownIt({ html: true });
 
 // Text size styles
 const sizeStyles = {
@@ -42,7 +39,7 @@ const classes = `text-gray-600 ${sizeStyles[size]} ${className}`;
   text ? (
     dataEditable && dataProp ? (
       markdown ? (
-        <div class={classes} data-editable={dataEditable} data-prop={dataProp} set:html={md?.render(text) ?? ""} {...elementRest} />
+        <div class={classes} data-editable={dataEditable} data-prop={dataProp} set:html={md.render(text)} {...elementRest} />
       ) : (
         <p class={classes} {...elementRest}>
           <editable-text data-editable={dataEditable} data-prop={dataProp}>
@@ -50,8 +47,8 @@ const classes = `text-gray-600 ${sizeStyles[size]} ${className}`;
           </editable-text>
         </p>
       )
-    ) : markdown && md ? (
-      <div class={classes} set:html={md?.render(text) ?? ""} {...elementRest} />
+    ) : markdown ? (
+      <div class={classes} set:html={md.render(text)} {...elementRest} />
     ) : (
       <p class={classes} {...elementRest}>
         {text}
