@@ -17,10 +17,9 @@ type Props =
       author: string;
       seo?: SEOProps;
       body: string;
-      rawContent?: () => string;
       slug?: string;
     }
-  | (MarkdownLayoutProps<{
+  | MarkdownLayoutProps<{
       title: string;
       date: Date;
       featured_image: {
@@ -29,11 +28,11 @@ type Props =
       };
       author: string;
       seo?: SEOProps;
-    }> & { rawContent?: () => string; body?: string });
+    }>;
 
 const props = "frontmatter" in Astro.props ? Astro.props.frontmatter : Astro.props;
 const { title, date, featured_image, author } = props;
-const content = Astro.props.body ?? Astro.props.rawContent?.() ?? "";
+const content = "body" in Astro.props ? Astro.props.body : (Astro.props.rawContent() ?? "");
 const wordCount = content.split(" ").length;
 const readingTime = Math.floor(wordCount / 183);
 
