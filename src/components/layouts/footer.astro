@@ -51,8 +51,8 @@ const footerData = footer as FooterData;
           </div>
         </div>
 
-        <div class="w-full lg:w-2/3 px-4 order-1" data-editable="array" data-prop="@data[footer].sections">
-          <div class="flex flex-wrap -mx-4">
+        <div class="w-full lg:w-2/3 px-4 order-1">
+          <div class="flex flex-wrap -mx-4" data-editable="array" data-prop="@data[footer].sections">
             {
               footerData.sections?.map((section: FooterSection, i: number) => (
                 <div class="w-1/2 md:w-1/4 lg:w-1/3 px-4" data-editable="array-item">
