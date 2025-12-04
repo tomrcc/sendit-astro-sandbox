@@ -73,7 +73,7 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
   <body class="min-h-screen flex flex-col">
     <script>
       // Lazy load CloudCannon component registration only when in editor mode
-      if (window.inEditorMode) {
+      if (window?.inEditorMode) {
         import("../scripts/register-components.ts").catch((error) => {
           console.warn("Failed to load CloudCannon component registration:", error);
         });

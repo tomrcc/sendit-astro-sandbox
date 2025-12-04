@@ -3,10 +3,6 @@
 
 // Extend the Window interface to include CloudCannon editor properties
 declare global {
-  interface Window {
-    inEditorMode?: boolean;
-  }
-
   // CloudCannon editable elements
   namespace JSX {
     interface IntrinsicElements {
@@ -41,5 +37,4 @@ declare global {
   }
 }
 
-export { };
-
+export {};
