@@ -67,7 +67,7 @@ collections_config:
     _enabled_editors:
       - visual
     _inputs:
-      content_blocks:
+      contentBlocks:
         type: array
         options:
           empty_type: array
@@ -375,3 +375,5 @@ data_config:
   theme:
     path: data/theme.json
 timezone: Etc/UTC
+_structures_from_glob:
+  - /.cloudcannon/*.cloudcannon.structures.yml
