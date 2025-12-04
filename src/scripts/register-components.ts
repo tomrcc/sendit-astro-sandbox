@@ -60,12 +60,15 @@ const astroComponentRegistrations = [
   { name: "global-faq-item", component: FaqItem },
 ];
 
+registerAstroComponent("global/counter", GlobalCounter);
+registerAstroComponent("global/hero", GlobalHero);
+
 // Register your React components with CloudCannon
-registerReactComponent("shared-AnimatedNumber", AnimatedNumber);
-registerReactComponent("layouts-Navigation", Navigation);
-registerReactComponent("shared-ThemeSelector", ThemeSelector);
+registerReactComponent("shared/AnimatedNumber", AnimatedNumber);
+registerReactComponent("layouts/Navigation", Navigation);
+registerReactComponent("shared/ThemeSelector", ThemeSelector);
 
 // Register your Astro components with CloudCannon
-astroComponentRegistrations.forEach(({ name, component }): void => {
-  registerAstroComponent(name, component);
-});
+// astroComponentRegistrations.forEach(({ name, component }): void => {
+//   registerAstroComponent(name, component);
+// });
