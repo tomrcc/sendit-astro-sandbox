@@ -35,7 +35,7 @@ const { pricing_tier } = Astro.props;
   <div class="bg-primary/10 bg-linear-to-b from-cyan-primary/10 to-white h-70"></div>
   <div class="max-w-7xl -mt-70 mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-wrap -mx-4" data-editable="array" data-prop="pricing_tier">
-      {pricing_tier && pricing_tier.map((tier, i) => <PricingItem tier={tier} />)}
+      {pricing_tier && pricing_tier.map((tier) => <PricingItem tier={tier} />)}
     </div>
   </div>
 </section>
