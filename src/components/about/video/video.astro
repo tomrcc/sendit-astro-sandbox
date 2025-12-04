@@ -53,7 +53,8 @@ const { title, description, button, video } = Astro.props;
           <Heading 
             level={2}
             text={title}
-            label="title"
+            data-prop="title"
+            data-editable="text"
             class="mb-6 tracking-tight"
           />
           <div 

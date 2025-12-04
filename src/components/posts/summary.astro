@@ -44,14 +44,7 @@ const {
       }
     </div>
     <a data-astro-prefetch href={`/blog/${slug}`} class="hover:text-primary transition-colors group">
-      <Heading
-        editable={false}
-        level={2}
-        size={6}
-        text={title}
-        label="title"
-        class="text-xl font-bold text-gray-900 line-clamp-2 leading-tight group-hover:text-primary"
-      />
+      <Heading level={2} size={6} text={title} class="text-xl font-bold text-gray-900 line-clamp-2 leading-tight group-hover:text-primary" />
       <time datetime={post.data.date.toISOString()} class="text-sm text-primary">
         {post.data.date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
       </time>

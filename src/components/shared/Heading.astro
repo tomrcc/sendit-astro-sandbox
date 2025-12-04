@@ -1,35 +1,23 @@
 ---
 // Base props that are common to all variants
-interface BaseProps {
+interface Props {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   size?: 1 | 2 | 3 | 4 | 5 | 6;
-  editable?: boolean;
+  text?: string;
   class?: string;
   [key: string]: any;
 }
 
-// Props when using text with editable label (no children allowed)
-interface TextProps extends BaseProps {
-  text: string;
-  label?: string;
-}
-
-// Props when using children (no text/label allowed)
-interface ChildrenProps extends BaseProps {
-  text?: never;
-  label?: never;
-}
-
-// Union type that enforces either text OR children, but not both
-export type Props = TextProps | ChildrenProps;
-
-const { level = 1, size, text, label, editable = true, class: className = "", ...rest } = Astro.props;
+const { level = 1, size, text, class: className = "", ...rest } = Astro.props;
 
 // Runtime check to ensure proper usage
 const hasSlotContent = Astro.slots.has("default");
 if (text && hasSlotContent) {
   throw new Error('Heading component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
 }
+
+// Extract CloudCannon-specific attributes for the text wrapper
+const { "data-editable": dataEditable, "data-prop": dataProp, ...elementRest } = rest;
 
 // Default heading styles based on level/size
 const levelStyles = {
@@ -49,6 +37,18 @@ const classes = `${levelStyles[styleLevel]} ${className}`;
 const Tag = `h${level}` as any;
 ---
 
-<Tag class={classes} {...rest}>
-  {text ? label && editable ? <editable-text data-prop={label}>{text}</editable-text> : text : <slot />}
+<Tag class={classes} {...elementRest}>
+  {
+    text ? (
+      dataEditable && dataProp ? (
+        <editable-text data-editable={dataEditable} data-prop={dataProp}>
+          {text}
+        </editable-text>
+      ) : (
+        text
+      )
+    ) : (
+      <slot />
+    )
+  }
 </Tag>

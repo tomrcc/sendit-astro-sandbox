@@ -46,7 +46,7 @@ const { image, image_alt, title, description, button, reversed } = Astro.props;
           </div>
           <div class="w-full lg:w-1/2">
             <div class="mb-7 md:mb-10 xl:mb-16 2xl:ps-8 relative z-20">
-              <Heading level={2} text={title} label="title" class={"pb-6"} />
+              <Heading level={2} text={title} data-prop="title" data-editable="text" class={"pb-6"} />
               <div data-editable="text" data-prop="description" set:html={md.render(description)} />
               <div class="Learn-more">
                 {button && (
@@ -63,7 +63,7 @@ const { image, image_alt, title, description, button, reversed } = Astro.props;
         <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div class="relative w-full lg:w-1/2 order-2 lg:order-1 z-20">
             <div class="mb-7 md:mb-10 xl:mb-16 2xl:ps-8 ">
-              <Heading level={2} text={title} label="title" class="xl:pe-0" />
+              <Heading level={2} text={title} data-prop="title" data-editable="text" class="xl:pe-0" />
               <div data-editable="text" data-prop="description" set:html={md.render(description)} />
               <div class="Learn-more">
                 {button && (
