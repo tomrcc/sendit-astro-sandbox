@@ -1,34 +1,23 @@
 ---
 // Base props that are common to all variants
-interface BaseProps {
+interface Props {
   size?: "sm" | "base" | "lg" | "xl" | "2xl";
   class?: string;
   markdown?: boolean;
+  text?: string;
   [key: string]: any;
 }
 
-// Props when using text with editable label (no children allowed)
-interface TextProps extends BaseProps {
-  text: string;
-  label?: string;
-}
-
-// Props when using children (no text/label allowed)
-interface ChildrenProps extends BaseProps {
-  text?: never;
-  label?: never;
-}
-
-// Union type that enforces either text OR children, but not both
-export type Props = TextProps | ChildrenProps;
-
-const { size = "base", text, label, markdown = false, class: className = "", ...rest } = Astro.props;
+const { size = "base", text, markdown = false, class: className = "", ...rest } = Astro.props;
 
 // Runtime check to ensure proper usage
 const hasSlotContent = Astro.slots.has("default");
 if (text && hasSlotContent) {
   throw new Error('Text component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
 }
+
+// Extract CloudCannon-specific attributes for the text wrapper
+const { "data-editable": dataEditable, "data-prop": dataProp, ...elementRest } = rest;
 
 // Import markdown-it only if needed
 let md;
@@ -51,23 +40,25 @@ const classes = `text-gray-600 ${sizeStyles[size]} ${className}`;
 
 {
   text ? (
-    label ? (
+    dataEditable && dataProp ? (
       markdown ? (
-        <div class={classes} data-editable="text" data-prop={label} set:html={md?.render(text) ?? ""} {...rest} />
+        <div class={classes} data-editable={dataEditable} data-prop={dataProp} set:html={md?.render(text) ?? ""} {...elementRest} />
       ) : (
-        <p class={classes} {...rest}>
-          <editable-text data-prop={label}>{text}</editable-text>
+        <p class={classes} {...elementRest}>
+          <editable-text data-editable={dataEditable} data-prop={dataProp}>
+            {text}
+          </editable-text>
         </p>
       )
     ) : markdown && md ? (
-      <div class={classes} set:html={md?.render(text) ?? ""} {...rest} />
+      <div class={classes} set:html={md?.render(text) ?? ""} {...elementRest} />
     ) : (
-      <p class={classes} {...rest}>
+      <p class={classes} {...elementRest}>
         {text}
       </p>
     )
   ) : (
-    <div class={classes} {...rest}>
+    <div class={classes} {...elementRest}>
       <slot />
     </div>
   )

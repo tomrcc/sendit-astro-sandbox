@@ -66,7 +66,7 @@ const hasSingleImage = image && image_alt;
   <div class="mx-auto max-w-[1500px] px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
     <div class="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
       <Heading level={1} text={title} data-prop="title" data-editable="text" class="mb-6" />
-      <Text text={description} label="description" size="xl" markdown={true} class="text-pretty" />
+      <Text text={description} data-prop="description" data-editable="text" size="xl" markdown={true} class="text-pretty" />
       <div class="mt-10 flex items-center gap-x-6">
         {button && <Button href={button.link} variant={"primary"} size={"lg"} text={button.text} data-prop="button.text" data-editable="text" />}
       </div>
