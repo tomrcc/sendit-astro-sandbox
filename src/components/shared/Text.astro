@@ -25,7 +25,7 @@ export type Props = TextProps | ChildrenProps;
 const { size = "base", text, label, markdown = false, class: className = "", ...rest } = Astro.props;
 
 // Runtime check to ensure proper usage
-const hasSlotContent = await Astro.slots.has("default");
+const hasSlotContent = Astro.slots.has("default");
 if (text && hasSlotContent) {
   throw new Error('Text component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
 }

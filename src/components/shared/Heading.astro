@@ -26,7 +26,7 @@ export type Props = TextProps | ChildrenProps;
 const { level = 1, size, text, label, editable = true, class: className = "", ...rest } = Astro.props;
 
 // Runtime check to ensure proper usage
-const hasSlotContent = await Astro.slots.has("default");
+const hasSlotContent = Astro.slots.has("default");
 if (text && hasSlotContent) {
   throw new Error('Heading component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
 }
