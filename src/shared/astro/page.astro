@@ -1,12 +1,17 @@
 ---
 const components: Record<string, any> = {};
-const componentImports = import.meta.glob("../../components/**/*.{jsx,tsx,astro}", {
-  eager: true,
-});
+const componentImports = import.meta.glob(
+  "../../components/**/*.{jsx,tsx,astro}",
+  {
+    eager: true,
+  }
+);
 
 Object.entries(componentImports).forEach(([path, mod]: [string, any]) => {
   // Normalize path: strip leading ../../components/ and .jsx extension
-  let rel = path.replace("../../components/", "").replace(/\.(jsx|tsx|astro)$/, "");
+  let rel = path
+    .replace("../../components/", "")
+    .replace(/\.(jsx|tsx|astro)$/, "");
   const parts = rel.split("/");
   // If last two segments duplicate (e.g. feature/feature, hero/hero) drop the final
   if (parts.length > 1 && parts[parts.length - 1] === parts[parts.length - 2]) {
@@ -19,7 +24,14 @@ Object.entries(componentImports).forEach(([path, mod]: [string, any]) => {
 const { content_blocks } = Astro.props;
 ---
 
-<main id="main-content" tabindex="-1" data-editable="array" data-prop="content_blocks" data-id-key="_name">
+<main
+  id="main-content"
+  tabindex="-1"
+  data-editable="array"
+  data-prop="content_blocks"
+  data-id-key="_name"
+  data-component-key="_name"
+>
   {
     content_blocks.map((block: any) => {
       const key = block._name;
@@ -29,7 +41,7 @@ const { content_blocks } = Astro.props;
         return null;
       }
       return (
-        <div data-editable="array-item" data-id={block._name}>
+        <div data-editable="array-item" data-id={key} data-component={key}>
           <Component {...block} />
         </div>
       );
