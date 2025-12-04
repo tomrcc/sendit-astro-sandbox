@@ -31,30 +31,25 @@ const blogCollection = defineCollection({
   }),
 });
 
-// Standard content page schema with snake_case `content_blocks`
-const contentBlocksSchema = z.object({ content_blocks: z.array(z.any()) });
+const pageSchema = z.object({
+  _schema: z.any().optional(),
+  hidden: z.boolean().optional().default(false),
+  title: z.string(),
+  page_size: z.undefined(),
+  description: z.undefined(),
+  seo: seoSchema,
+  content_blocks: z.array(z.any()),
+});
 
-const pageSchema = z
-  .object({
-    _schema: z.any().optional(),
-    hidden: z.boolean().optional().default(false),
-    title: z.string(),
-    page_size: z.undefined(),
-    description: z.undefined(),
-    seo: seoSchema,
-  })
-  .and(contentBlocksSchema);
-
-const paginatedCollectionSchema = z
-  .object({
-    _schema: z.literal("paginated_collection"),
-    hidden: z.literal(true).optional().default(true),
-    title: z.string(),
-    description: z.string().optional(),
-    page_size: z.number().positive(),
-    seo: seoSchema,
-  })
-  .and(z.object({ content_blocks: z.undefined().optional() }));
+const paginatedCollectionSchema = z.object({
+  _schema: z.literal("paginated_collection"),
+  hidden: z.literal(true).optional().default(true),
+  title: z.string(),
+  description: z.string().optional(),
+  page_size: z.number().positive(),
+  seo: seoSchema,
+  content_blocks: z.undefined().optional(),
+});
 
 const pagesCollection = defineCollection({
   schema: z.union([paginatedCollectionSchema, pageSchema]),
