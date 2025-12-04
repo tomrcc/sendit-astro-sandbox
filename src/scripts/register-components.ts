@@ -2,6 +2,9 @@
 import { registerAstroComponent } from "@cloudcannon/editable-regions/astro";
 import { registerReactComponent } from "@cloudcannon/editable-regions/react";
 
+//This import is only necessary if you use React components nested inside your Astro components.
+import "@cloudcannon/editable-regions/astro-react-renderer";
+
 // Import components that should be editable in CloudCannon
 // Note: Add your components here as needed
 
@@ -34,18 +37,8 @@ import LayoutsFooter from "../components/layouts/footer.astro";
 import PostsSummary from "../components/posts/summary.astro";
 import PricingTable from "../components/pricing/table/table.astro";
 
-// Type definitions for component registration
-type ComponentName = string;
-type AstroComponent = any; // Astro components don't have strict typing available
-
-// Component registration interface
-interface ComponentRegistration {
-  name: ComponentName;
-  component: AstroComponent;
-}
-
 // Define component registrations with proper typing
-const astroComponentRegistrations: ComponentRegistration[] = [
+const astroComponentRegistrations = [
   { name: "global/counter", component: GlobalCounter },
   { name: "global/hero", component: GlobalHero },
   { name: "Video", component: HomeVideo },
@@ -73,8 +66,6 @@ registerReactComponent("layouts/Navigation", Navigation);
 registerReactComponent("shared/ThemeSelector", ThemeSelector);
 
 // Register your Astro components with CloudCannon
-astroComponentRegistrations.forEach(
-  ({ name, component }: ComponentRegistration): void => {
-    registerAstroComponent(name, component);
-  },
-);
+astroComponentRegistrations.forEach(({ name, component }): void => {
+  registerAstroComponent(name, component);
+});
