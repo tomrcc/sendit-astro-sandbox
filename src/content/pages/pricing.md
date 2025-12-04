@@ -111,10 +111,10 @@ content_blocks:
       we’re helping you grow your business with tools and resources that make
       email marketing easy.
     FAQ:
-      - title: Where can I find out more information?
-        description: Right here on this website, or contact our support team.
       - title: Is there a maximum numbers of emails I can send each month?
         description: No, the prices include unlimited emails. Send to your heart's content.
+      - title: Where can I find out more information?
+        description: Right here on this website, or contact our support team.
       - title: Do you have pricing for non-profits?
         description: >-
           Yes, contact our support team and we'll get you set up on our
