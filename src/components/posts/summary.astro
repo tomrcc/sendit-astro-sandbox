@@ -53,7 +53,7 @@ const {
         class="text-xl font-bold text-gray-900 line-clamp-2 leading-tight group-hover:text-primary"
       />
       <time datetime={post.data.date.toISOString()} class="text-sm text-primary">
-        {new Date(post.data.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
+        {post.data.date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
       </time>
     </a>
   </div>
