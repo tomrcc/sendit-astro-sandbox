@@ -61,9 +61,9 @@ const astroComponentRegistrations = [
 ];
 
 // Register your React components with CloudCannon
-registerReactComponent("shared/AnimatedNumber", AnimatedNumber);
-registerReactComponent("layouts/Navigation", Navigation);
-registerReactComponent("shared/ThemeSelector", ThemeSelector);
+registerReactComponent("shared-AnimatedNumber", AnimatedNumber);
+registerReactComponent("layouts-Navigation", Navigation);
+registerReactComponent("shared-ThemeSelector", ThemeSelector);
 
 // Register your Astro components with CloudCannon
 astroComponentRegistrations.forEach(({ name, component }): void => {
