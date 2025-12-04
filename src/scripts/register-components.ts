@@ -21,6 +21,7 @@ import BlogPagination from "../components/blog/pagination.astro";
 import ContactForm from "../components/contact/form/form.astro";
 import GlobalCounter from "../components/global/counter/counter.astro";
 import GlobalFaq from "../components/global/faq/faq.astro";
+import FaqItem from "../components/global/faq/faqItem.astro";
 import GlobalFeature from "../components/global/feature/feature.astro";
 import GlobalHeader from "../components/global/header/header.astro";
 import GlobalHero from "../components/global/hero/hero.astro";
@@ -63,6 +64,7 @@ const astroComponentRegistrations: ComponentRegistration[] = [
   { name: "posts-summary", component: PostsSummary },
   { name: "blog-list", component: BlogList },
   { name: "blog-pagination", component: BlogPagination },
+  { name: "global/faq-item", component: FaqItem },
 ];
 
 // Register your React components with CloudCannon

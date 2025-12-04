@@ -40,8 +40,15 @@ const { title, title_suffix, description, FAQ } = Astro.props;
     </div>
     <div class="flex justify-center">
       <div class="w-full">
-        <div class="space-y-4" data-editable="array" data-prop="FAQ">
-          {FAQ && FAQ.map((q: FaqItemData, i: number) => <FaqItem faq={q} i={i} />)}
+        <div class="space-y-4 grid gap-3" data-editable="array" data-prop="FAQ">
+          {
+            FAQ &&
+              FAQ.map((q: FaqItemData, i: number) => (
+                <editable-array-item data-prop="FAQ">
+                  <FaqItem faq={q} i={i} />
+                </editable-array-item>
+              ))
+          }
         </div>
       </div>
     </div>
