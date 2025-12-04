@@ -41,7 +41,7 @@ import PricingTable from "../components/pricing/table/table.astro";
 const astroComponentRegistrations = [
   { name: "global-counter", component: GlobalCounter },
   { name: "global-hero", component: GlobalHero },
-  { name: "Video", component: HomeVideo },
+  { name: "home-video", component: HomeVideo },
   { name: "about-team", component: AboutTeam },
   { name: "about-video", component: AboutVideo },
   { name: "contact-form", component: ContactForm },
@@ -50,14 +50,14 @@ const astroComponentRegistrations = [
   { name: "global-header", component: GlobalHeader },
   { name: "global-login", component: GlobalLogin },
   { name: "global-signup", component: GlobalSignup },
-  { name: "global/simple-hero", component: GlobalSimpleHero },
+  { name: "global-simple-hero", component: GlobalSimpleHero },
   { name: "global-testimonial", component: GlobalTestimonial },
   { name: "layouts-footer", component: LayoutsFooter },
-  { name: "pricing/table", component: PricingTable },
+  { name: "pricing-table", component: PricingTable },
   { name: "posts-summary", component: PostsSummary },
   { name: "blog-list", component: BlogList },
   { name: "blog-pagination", component: BlogPagination },
-  { name: "global/faq-item", component: FaqItem },
+  { name: "global-faq-item", component: FaqItem },
 ];
 
 // Register your React components with CloudCannon
