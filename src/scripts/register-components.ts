@@ -39,8 +39,8 @@ import PricingTable from "../components/pricing/table/table.astro";
 
 // Define component registrations with proper typing
 const astroComponentRegistrations = [
-  { name: "global/counter", component: GlobalCounter },
-  { name: "global/hero", component: GlobalHero },
+  { name: "global-counter", component: GlobalCounter },
+  { name: "global-hero", component: GlobalHero },
   { name: "Video", component: HomeVideo },
   { name: "about-team", component: AboutTeam },
   { name: "about-video", component: AboutVideo },
