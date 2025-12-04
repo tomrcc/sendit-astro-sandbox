@@ -1,8 +1,3 @@
-contentBlocks:
+content_blocks:
   values_from_glob:
-    - /src/components/pricing/table/*.cloudcannon.structure-value.yml
-    - /src/components/home/video/*.cloudcannon.structure-value.yml
-    - /src/components/contact/form/*.cloudcannon.structure-value.yml
-    - /src/components/global/**/*.cloudcannon.structure-value.yml
-    - /src/components/about/video/*.cloudcannon.structure-value.yml
-    - /src/components/about/team/*.cloudcannon.structure-value.yml
+    - /src/components/**/*.cloudcannon.structure-value.yml
