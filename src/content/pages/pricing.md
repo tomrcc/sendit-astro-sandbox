@@ -1,4 +1,5 @@
 ---
+_schema: default
 title: Pricing
 seo:
   page_description:
@@ -11,9 +12,10 @@ seo:
 content_blocks:
   - _name: global/simple-hero
     title: A plan for everyone
-    description: Sendit is easy to get started and we have a pricing plan for businesses of all sizes.
-  - _name: pricing/table
-    pricing_tier:
+    description: >-
+      Sendit is easy to get started and we have a pricing plan for businesses of
+      all sizes.
+  - pricing_tier:
       - tier: Free
         highlight_tier: false
         description: Everything you need to get started.
@@ -101,19 +103,25 @@ content_blocks:
         button:
           link: /signup
           text: Try This Free
-  - _name: global/faq
-    title: Have
+    _name: pricing/table
+  - title: Have
     title_suffix: Questions?
-    description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
+    description: >-
+      We believe that a good email marketing strategy is the key to growth. So
+      we’re helping you grow your business with tools and resources that make
+      email marketing easy.
     FAQ:
-      - title: Is there a maximum numbers of emails I can send each month?
-        description: No, the prices include unlimited emails. Send to your heart's content.
       - title: Where can I find out more information?
         description: Right here on this website, or contact our support team.
+      - title: Is there a maximum numbers of emails I can send each month?
+        description: No, the prices include unlimited emails. Send to your heart's content.
       - title: Do you have pricing for non-profits?
-        description: Yes, contact our support team and we'll get you set up on our non-profit plan.
+        description: >-
+          Yes, contact our support team and we'll get you set up on our
+          non-profit plan.
       - title: What forms of payment do you accept?
         description: We accept credit cards, checks, and cash.
       - title: In which currencies can I make payments?
         description: All payments are in **USD**.
+    _name: global/faq
 ---
