@@ -78,6 +78,3 @@ astroComponentRegistrations.forEach(
     registerAstroComponent(name, component);
   },
 );
-
-// Export types for external use if needed
-export type { AstroComponent, ComponentName, ComponentRegistration };
