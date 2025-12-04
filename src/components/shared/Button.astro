@@ -12,7 +12,7 @@ interface Props {
 const { href, variant = "primary", size = "lg", text, label, class: className = "", ...rest } = Astro.props;
 
 // Check for conflicting usage
-const hasSlotContent = await Astro.slots.has("default");
+const hasSlotContent = Astro.slots.has("default");
 
 // This will cause a TypeScript error in the consuming component
 if (text && hasSlotContent) {
