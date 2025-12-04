@@ -8,7 +8,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-contentBlocks:
+content_blocks:
   - _name: about/hero
     title: On a mission to change email marketing
     description: We're here to breathe new air into email marketing and help grow your business.
