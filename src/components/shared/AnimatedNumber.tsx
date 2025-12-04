@@ -59,7 +59,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
       if (isInteger) {
         setDisplayNumber(Math.floor(currentValue));
       } else {
-        setDisplayNumber(Math.round(currentValue * 100) / 100);
+        setDisplayNumber(currentValue.toFixed(2));
       }
 
       if (progress < 1) {
