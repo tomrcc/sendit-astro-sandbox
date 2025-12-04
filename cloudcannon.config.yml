@@ -375,5 +375,3 @@ data_config:
   theme:
     path: data/theme.json
 timezone: Etc/UTC
-_structures_from_glob:
-  - /.cloudcannon/*.cloudcannon.structures.yml
