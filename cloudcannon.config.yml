@@ -67,7 +67,7 @@ collections_config:
     _enabled_editors:
       - visual
     _inputs:
-      contentBlocks:
+      content_blocks:
         type: array
         options:
           empty_type: array
@@ -140,21 +140,6 @@ collections_config:
           preview:
             icon: smart_button
         hidden: "!enable_nav_btn"
-        cascade: true
-      $.primary_color:
-        type: color
-        options:
-          format: hex
-          alpha:
-          empty_type:
-          required: true
-          required_message:
-          min_length:
-          min_length_message:
-          max_length:
-          max_length_message:
-          pattern:
-          pattern_message:
         cascade: true
     disable_add: true
     disable_add_folder: true
