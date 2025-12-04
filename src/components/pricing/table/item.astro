@@ -130,7 +130,8 @@ const { tier } = Astro.props;
             variant={tier.highlight_tier ? "primary" : "secondary"}
             size="lg"
             text={tier.button.text}
-            label="button.text"
+            data-prop="button.text"
+            data-editable="text"
           />
         )}
       </div>

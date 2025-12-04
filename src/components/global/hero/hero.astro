@@ -68,7 +68,7 @@ const hasSingleImage = image && image_alt;
       <Heading level={1} text={title} label="title" class="mb-6" />
       <Text text={description} label="description" size="xl" markdown={true} class="text-pretty" />
       <div class="mt-10 flex items-center gap-x-6">
-        {button && <Button href={button.link} variant={"primary"} size={"lg"} text={button.text} label="button.text" />}
+        {button && <Button href={button.link} variant={"primary"} size={"lg"} text={button.text} data-prop="button.text" data-editable="text" />}
       </div>
     </div>
     

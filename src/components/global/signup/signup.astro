@@ -131,7 +131,15 @@ const { title, form } = Astro.props;
           </div>
 
           <div>
-            <Button type="submit" variant="primary" size="lg" text={form.sign_up_text} label="form.sign_up_text" class="w-full" />
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              text={form.sign_up_text}
+              data-prop="form.sign_up_text"
+              data-editable="text"
+              class="w-full"
+            />
           </div>
 
           <div class="relative my-6">

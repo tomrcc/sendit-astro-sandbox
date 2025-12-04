@@ -72,7 +72,15 @@ const { title, fullname, email, checkbox_text, log_in_button, sign_up_button } =
           </div>
 
           <div>
-            <Button type="submit" variant="primary" size="lg" text={log_in_button.text} label="log_in_button.text" class="w-full" />
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              text={log_in_button.text}
+              data-prop="log_in_button.text"
+              data-editable="text"
+              class="w-full"
+            />
           </div>
 
           <div class="relative my-6">
