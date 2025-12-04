@@ -1,12 +1,12 @@
 ---
 import Page from "@shared/page.astro";
-import Layout from "./Layout.astro";
+import Layout, { type SEOProps } from "./Layout.astro";
 
 type Props = {
   frontmatter: {
     title: string;
     content_blocks: Array<Record<string, any>>;
-    seo?: any;
+    seo?: SEOProps;
   };
 };
 
