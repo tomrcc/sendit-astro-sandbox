@@ -8,7 +8,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
+contentBlocks:
   - _name: global/simple-hero
     title: A plan for everyone
     description: Sendit is easy to get started and we have a pricing plan for businesses of all sizes.

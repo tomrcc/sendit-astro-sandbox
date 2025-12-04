@@ -9,7 +9,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
+contentBlocks:
   - _name: global/hero
     title: Beautiful web campaigns
     description: >-

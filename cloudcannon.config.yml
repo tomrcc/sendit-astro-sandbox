@@ -67,7 +67,7 @@ collections_config:
     _enabled_editors:
       - visual
     _inputs:
-      content_blocks:
+      contentBlocks:
         type: array
         options:
           empty_type: array

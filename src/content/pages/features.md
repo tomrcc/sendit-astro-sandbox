@@ -8,7 +8,7 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
-content_blocks:
+contentBlocks:
   - _name: global/hero
     title: Run the best campaigns
     description: Sendit will change the way you think about email and marketing automation.
