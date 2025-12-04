@@ -16,8 +16,6 @@ const hasSlotContent = Astro.slots.has("default");
 
 // This will cause a TypeScript error in the consuming component
 if (text && hasSlotContent) {
-  // Force a compile-time error by assigning string to never
-  const _compileError: never = "COMPILE ERROR: Cannot use both 'text' prop and slot children in Button component" as never;
   throw new Error("Button: Cannot use both text prop and slot children");
 }
 
