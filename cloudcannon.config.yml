@@ -41,6 +41,7 @@ collections_config:
         options:
           resize_style: crop
           width: 1296
+          required: true
         comment: The hero image used at the top of the page
         cascade: true
     add_options:
@@ -139,7 +140,7 @@ collections_config:
         options:
           preview:
             icon: smart_button
-        hidden: "!enable_nav_btn"
+        hidden: '!enable_nav_btn'
         cascade: true
       $.primary_color:
         type: color
@@ -330,12 +331,12 @@ _structures:
           dropdown:
             type: array
             options:
+              structures: _structures.dropdown
               disable_add: false
               disable_remove: false
               disable_reorder: false
-              structures: _structures.dropdown
             label: Dropdown Items
-            hidden: "!enable_dropdown"
+            hidden: '!enable_dropdown'
             cascade: true
         preview:
           text:
@@ -362,9 +363,9 @@ _structures:
           icon: link
 commit_templates:
   - label: Default message
-    template_string: "[default_commit_message]"
+    template_string: '[default_commit_message]'
   - label: Custom message
-    template_string: "{message}"
+    template_string: '{message}'
 data_config:
   blog-tags:
     path: data/blog-tags.json
