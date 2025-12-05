@@ -60,8 +60,7 @@ const astroComponentRegistrations = [
   { name: "global-faq-item", component: FaqItem },
 ];
 
-registerAstroComponent("global/counter", GlobalCounter);
-registerAstroComponent("global/hero", GlobalHero);
+registerAstroComponent("about/video", GlobalCounter);
 
 // Register your React components with CloudCannon
 registerReactComponent("shared/AnimatedNumber", AnimatedNumber);
