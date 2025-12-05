@@ -39,11 +39,11 @@ import PricingTable from "../components/pricing/table/table.astro";
 
 // Define component registrations with proper typing
 const astroComponentRegistrations = [
-  { name: "global-counter", component: GlobalCounter },
-  { name: "global-hero", component: GlobalHero },
-  { name: "home-video", component: HomeVideo },
-  { name: "about-team", component: AboutTeam },
-  { name: "about-video", component: AboutVideo },
+  { name: "global/counter", component: GlobalCounter },
+  { name: "global/hero", component: GlobalHero },
+  { name: "home/video", component: HomeVideo },
+  { name: "about/team", component: AboutTeam },
+  { name: "about/video", component: AboutVideo },
   { name: "contact-form", component: ContactForm },
   { name: "global-faq", component: GlobalFaq },
   { name: "global-feature", component: GlobalFeature },
@@ -60,14 +60,12 @@ const astroComponentRegistrations = [
   { name: "global-faq-item", component: FaqItem },
 ];
 
-registerAstroComponent("about/video", GlobalCounter);
-
 // Register your React components with CloudCannon
 registerReactComponent("shared/AnimatedNumber", AnimatedNumber);
 registerReactComponent("layouts/Navigation", Navigation);
 registerReactComponent("shared/ThemeSelector", ThemeSelector);
 
 // Register your Astro components with CloudCannon
-// astroComponentRegistrations.forEach(({ name, component }): void => {
-//   registerAstroComponent(name, component);
-// });
+astroComponentRegistrations.forEach(({ name, component }): void => {
+  registerAstroComponent(name, component);
+});
