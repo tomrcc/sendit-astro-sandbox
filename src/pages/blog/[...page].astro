@@ -5,7 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
 
   // Sort posts by date (newest first)
   const sortedPosts = posts.sort((a, b) => {
@@ -43,7 +43,7 @@ export interface Props {
 }
 
 const { page: pagination } = Astro.props;
-const posts = pagination.data.filter((post) => !post.data.draft);
+const posts = pagination.data;
 ---
 
 <Layout title={frontmatter.title} seo={frontmatter.seo}>
