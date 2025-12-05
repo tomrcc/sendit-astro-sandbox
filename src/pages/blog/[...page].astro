@@ -47,6 +47,6 @@ const posts = pagination.data.filter((post) => !post.data.draft);
 ---
 
 <Layout title={frontmatter.title} seo={frontmatter.seo}>
-  <BlogList posts={posts} page={{ ...page.data, posts }} />
+  <BlogList posts={posts} page={page.data} />
   <BlogPagination pagination={{ ...pagination, data: posts }} />
 </Layout>
