@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [react(), editableRegions()],
   vite: {
     plugins: [tailwindcss()],
+    build: { sourcemap: "inline", minify: false },
   },
   prefetch: true,
 });
