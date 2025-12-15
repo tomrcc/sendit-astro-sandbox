@@ -6,8 +6,23 @@ import Heading from "../../shared/Heading.astro";
 const md = new MarkdownIt({ html: true });
 
 // Receive all props as the block for CloudCannon compatibility
-const { title, title_suffix, description, numbers, alternate_style } = Astro.props;
+const {
+  title,
+  title_suffix,
+  description,
+  numbers: numbersOriginal,
+  alternate_style,
+} = Astro.props;
 
+const numbers = [];
+for (const item of numbersOriginal) {
+  numbers.push({
+    prefix: item.prefix || "",
+    numberValue: item.numberValue,
+    suffix: item.suffix || "",
+    text: item.text || "",
+  });
+}
 interface CounterNumber {
   prefix?: string;
   numberValue: number;
@@ -25,18 +40,33 @@ export interface Props {
 }
 ---
 
-<section class={`${alternate_style ? "bg-muted pb-20 lg:pb-52" : ""}`} id="counter-up">
+<section
+  class={`${alternate_style ? "bg-muted pb-20 lg:pb-52" : ""}`}
+  id="counter-up"
+>
   <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-wrap">
       <div class="w-full">
         <div class="pt-12 pb-9 text-center">
-          <Heading level={2} class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900">
+          <Heading
+            level={2}
+            class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+          >
             <span data-editable="text" data-prop="title">{title}</span>{" "}
-            <span class="text-primary" data-editable="text" data-prop="title_suffix">
+            <span
+              class="text-primary"
+              data-editable="text"
+              data-prop="title_suffix"
+            >
               {title_suffix}
             </span>
           </Heading>
-          <div class="w-3/5 lg:w-4/5 xl:w-3/5 mx-auto text-lg" data-editable="text" data-prop="description" set:html={md.render(description)} />
+          <div
+            class="w-3/5 lg:w-4/5 xl:w-3/5 mx-auto text-lg"
+            data-editable="text"
+            data-prop="description"
+            set:html={md.render(description)}
+          />
         </div>
       </div>
       <div class="w-full">
@@ -45,34 +75,46 @@ export interface Props {
             <div
               class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 items-center justify-center text-center"
               data-editable="array"
-              data-prop="numbers">
+              data-prop="numbers"
+            >
               {numbers.map((number: CounterNumber, i: number) => (
                 <div class="relative h-full" data-editable="array-item">
                   <div
-                    class={`border-t border-r ${alternate_style ? "border-secondary" : "border-muted"} pt-10 px-8 pb-0 2xl:pt-8 2xl:px-8 xl:pt-8 xl:px-4 xl:pb-7 sm:pt-8 sm:px-0 sm:pb-7 ${i === 3 || (i === 1 && "lg:border-r-0") || (i === 3 && "lg:border-r-0") ? "lg:border-r-0" : ""} ${i >= numbers.length - (numbers.length % 4 || 4) ? "lg:border-r-0" : ""}`}>
+                    class={`border-t border-r ${alternate_style ? "border-secondary" : "border-muted"} pt-10 px-8 pb-0 2xl:pt-8 2xl:px-8 xl:pt-8 xl:px-4 xl:pb-7 sm:pt-8 sm:px-0 sm:pb-7 ${i === 3 || (i === 1 && "lg:border-r-0") || (i === 3 && "lg:border-r-0") ? "lg:border-r-0" : ""} ${i >= numbers.length - (numbers.length % 4 || 4) ? "lg:border-r-0" : ""}`}
+                  >
                     <div class=" flex justify-center">
                       <span
                         class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
                         style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
                         data-editable="text"
-                        data-prop="prefix">
+                        data-prop="prefix"
+                      >
                         {number.prefix || ""}
                       </span>
                       <AnimatedNumber
                         numberValue={number.numberValue}
                         className="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
-                        style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}
+                        style={{
+                          fontWeight: 700,
+                          lineHeight: 1.31,
+                          letterSpacing: "0.05px",
+                        }}
                         client:load
                       />
                       <span
                         class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
                         style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
                         data-editable="text"
-                        data-prop="suffix">
+                        data-prop="suffix"
+                      >
                         {number.suffix || ""}
                       </span>
                     </div>
-                    <p class="text-gray-900 text-base mb-0 sm:px-8 sm:pb-0" data-editable="text" data-prop="text">
+                    <p
+                      class="text-gray-900 text-base mb-0 sm:px-8 sm:pb-0"
+                      data-editable="text"
+                      data-prop="text"
+                    >
                       {number.text}
                     </p>
                   </div>
