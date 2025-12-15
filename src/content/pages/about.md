@@ -40,6 +40,7 @@ content_blocks:
         text: Venture capital raised
       - prefix:
         numberValue: 2016
+        suffix:
         text: Established in
       - prefix:
         numberValue: 40
