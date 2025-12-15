@@ -203,7 +203,7 @@ const dialogClasses = `
     const modals = document.querySelectorAll('dialog[data-modal="true"]');
 
     modals.forEach((modal) => {
-      const dialogElement = modal;
+      const dialogElement = modal as HTMLDialogElement;
       const unloadOnClose = dialogElement.getAttribute("data-unload-on-close") === "true";
 
       // Smooth close with animation
@@ -219,8 +219,8 @@ const dialogClasses = `
         // If unloadOnClose is enabled, clear the content
         if (unloadOnClose) {
           // Store original content for potential reopening
-          if (!dialogElement._originalContent) {
-            dialogElement._originalContent = dialogElement.innerHTML;
+          if (!(dialogElement as any)._originalContent) {
+            (dialogElement as any)._originalContent = dialogElement.innerHTML;
           }
         }
 
@@ -249,9 +249,9 @@ const dialogClasses = `
 
       // Handle modal opening to restore content if needed
       function openModal() {
-        if (unloadOnClose && dialogElement._originalContent) {
+        if (unloadOnClose && (dialogElement as any)._originalContent) {
           // Restore original content when reopening
-          dialogElement.innerHTML = dialogElement._originalContent;
+          dialogElement.innerHTML = (dialogElement as any)._originalContent;
           // Re-attach event listeners after content restoration
           attachEventListeners();
         }

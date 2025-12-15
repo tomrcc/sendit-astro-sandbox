@@ -13,12 +13,12 @@
   "dependencies": {
     "@astrojs/check": "^0.9.5",
     "@astrojs/react": "^4.3.0",
-    "@cloudcannon/editable-regions": "^0.0.7",
+    "@cloudcannon/editable-regions": "^0.0.9",
     "@makotot/ghostui": "^2.0.0",
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
-    "astro": "5.12.4",
+    "astro": "^5.16.5",
     "punycode": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,7 +34,6 @@
     "astro-seo": "^0.6.0",
     "markdown-it": "^13.0.1",
     "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.56.1"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
