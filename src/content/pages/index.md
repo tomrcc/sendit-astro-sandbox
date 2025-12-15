@@ -20,8 +20,7 @@ content_blocks:
     button:
       text: Try This Free
       link: /signup/
-  - _name: global/counter
-    title: Scale your
+  - title: Scale your
     title_suffix: Business
     description: >-
       We have an extensive library of pre-written sales emails, proven marketing
@@ -44,19 +43,19 @@ content_blocks:
         numberValue: 4322
         suffix: +
         text: Active users and growing
-  - _name: home/video
-    image: /images/video/video-thum.avif
+    _name: global/counter
+  - image: /images/video/video-thum.avif
     image_alt: Thumbnail for video
-    video_url: 45830194
-  - _name: global/header
-    title: "Sendit "
+    video_url: https://vimeo.com/45830194
+    _name: home/video
+  - title: 'Sendit '
     title_suffix: Features
-    remove_top_padding: true
     description: >-
       Our platform offers the most advanced features including automated email
       content creation, dynamic personalization, and customer segmentation.
-  - _name: global/feature
-    image: /images/feature/feature-card-one.png
+    remove_top_padding: true
+    _name: global/header
+  - image: /images/feature/feature-card-one.png
     image_alt: Message inbox
     title: Email Campaign in one minute
     description: >-
@@ -66,8 +65,8 @@ content_blocks:
       link: /signup
       text: Try This Free
     reversed: false
-  - _name: global/feature
-    image: /images/feature/feature-card-two.png
+    _name: global/feature
+  - image: /images/feature/feature-card-two.png
     image_alt: Visitor chart
     title: See every Lead in one Place
     description: >-
@@ -77,8 +76,8 @@ content_blocks:
       link: /signup
       text: Try This Free
     reversed: true
-  - _name: global/feature
-    image: /images/feature/feature-card-three.png
+    _name: global/feature
+  - image: /images/feature/feature-card-three.png
     image_alt: File upload
     title: 100% free uploads
     description: >-
@@ -89,8 +88,8 @@ content_blocks:
       link: /signup
       text: Try This Free
     reversed: false
-  - _name: global/testimonial
-    title: Build relationships that
+    _name: global/feature
+  - title: Build relationships that
     title_suffix: last
     description: >-
       Customers from around the world are building game changing email marketing
@@ -102,7 +101,7 @@ content_blocks:
         designation: CMO at Clear Appeal
         message: >-
           Sendit has taken Clear Appeal to the next level with it's beautiful
-          targetted email campaigns.
+          targeted email campaigns.
       - image: /images/testimonial/logo-3.jpg
         image_alt: Profile photo of Dolly Watson
         author: Dolly Watson
@@ -117,4 +116,5 @@ content_blocks:
         message: >-
           I can't imagine life without Sendit now, I have no idea how we were
           surviving before.
+    _name: global/testimonial
 ---
