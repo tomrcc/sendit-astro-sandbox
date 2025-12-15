@@ -100,8 +100,8 @@ content_blocks:
         author: Pete Fish
         designation: CMO at Clear Appeal
         message: >-
-          Sendit has taken Clear Appeal to the next level with it's beautiful
-          targeted email campaigns.
+          Sendit has taken Clear Appeal to the next level with its beautiful
+          email campaigns.
       - image: /images/testimonial/logo-3.jpg
         image_alt: Profile photo of Dolly Watson
         author: Dolly Watson
