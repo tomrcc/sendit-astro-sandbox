@@ -38,12 +38,15 @@ content_blocks:
         numberValue: 200
         suffix: m
         text: Venture capital raised
-      - numberValue: 2016
+      - prefix:
+        numberValue: 2016
         text: Established in
-      - numberValue: 40
+      - prefix:
+        numberValue: 40
         suffix: +
         text: Amazing team members
-      - numberValue: 4322
+      - prefix:
+        numberValue: 4322
         suffix: +
         text: Active users and growing
   - _name: about/video
