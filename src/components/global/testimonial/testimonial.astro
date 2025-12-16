@@ -55,7 +55,7 @@ const { title, title_suffix, description, testimonials } = Astro.props;
     >
       {
         testimonials &&
-          testimonials.map((slide: Testimonial, i: number) => (
+          testimonials.map((testimonial: Testimonial, i: number) => (
             <div data-editable="array-item">
               <div class="bg-white p-6 rounded-xl">
                 <div class="flex items-center gap-4 mt-4 mb-4">
@@ -64,8 +64,8 @@ const { title, title_suffix, description, testimonials } = Astro.props;
                       data-editable="image"
                       data-prop-src="image"
                       data-prop-alt="image_alt"
-                      src={slide.image}
-                      alt={slide.image_alt}
+                      src={testimonial.image}
+                      alt={testimonial.image_alt}
                       loading="lazy"
                       width={80}
                       height={80}
@@ -75,19 +75,19 @@ const { title, title_suffix, description, testimonials } = Astro.props;
                   <div class="flex-1">
                     <h3 class="font-semibold text-gray-900">
                       <editable-text data-prop="author">
-                        {slide.author}
+                        {testimonial.author}
                       </editable-text>
                     </h3>
                     <p class="text-gray-600">
                       <editable-text data-prop="designation">
-                        {slide.designation}
+                        {testimonial.designation}
                       </editable-text>
                     </p>
                   </div>
                 </div>
                 <p class="text-gray-700 leading-relaxed">
                   <editable-text data-prop="message">
-                    {slide.message}
+                    {testimonial.message}
                   </editable-text>
                 </p>
               </div>
