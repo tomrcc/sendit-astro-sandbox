@@ -6,12 +6,12 @@ value:
   title: We Felt Proud When People Love our
   title_suffix: Product
   description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
-  slider:
-  - image: /images/testimonial/logo-2.jpg
-    image_alt: Profile photo of the Head of Development
-    author: Sherlock Homes
-    designation: Head of Dev. at Company
-    message: Eget eu massa et consectetur. Mauris donec. Leo a, id sed duis proin sodales. Turpis viverra diam porttitor mattis morbi ac amet.
+  testimonials:
+    - image: /images/testimonial/logo-2.jpg
+      image_alt: Profile photo of the Head of Development
+      author: Sherlock Homes
+      designation: Head of Dev. at Company
+      message: Eget eu massa et consectetur. Mauris donec. Leo a, id sed duis proin sodales. Turpis viverra diam porttitor mattis morbi ac amet.
   _name: global/testimonial
 _inputs:
   description:

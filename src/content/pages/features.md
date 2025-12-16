@@ -18,7 +18,7 @@ content_blocks:
       text: Try This Free
     image: /images/feature/feature-hero.png
     image_alt: Charts
-  - title: 'Sendit '
+  - title: "Sendit "
     title_suffix: Features
     description: >-
       Sendit is the most complete solution to create beautiful email designs,
@@ -64,7 +64,7 @@ content_blocks:
     description: >-
       Customers from around the world are building game changing email marketing
       campaigns.
-    slider:
+    testimonials:
       - image: /images/testimonial/logo-2.jpg
         image_alt: Profile photo of Pete Fish
         author: Pete Fish

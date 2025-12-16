@@ -48,7 +48,7 @@ content_blocks:
     image_alt: Thumbnail for video
     video_url: https://vimeo.com/45830194
     _name: home/video
-  - title: 'Sendit '
+  - title: "Sendit "
     title_suffix: Features
     description: >-
       Our platform offers the most advanced features including automated email
@@ -94,7 +94,7 @@ content_blocks:
     description: >-
       Customers from around the world are building game changing email marketing
       campaigns.
-    slider:
+    testimonials:
       - image: /images/testimonial/logo-2.jpg
         image_alt: Profile photo of Pete Fish
         author: Pete Fish
