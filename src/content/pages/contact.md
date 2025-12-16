@@ -16,6 +16,8 @@ content_blocks:
     address:
       heading: Contact Details
       address: 123 Train St, San Francisco, CA 9107
+      image: /images/contact/corporate-fare.svg
+      image_alt: Work icon
     phone:
       heading: Phone
       cell: (123) 456 - 7895
