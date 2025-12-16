@@ -6,6 +6,8 @@ value:
     heading: Office Address
     address: 1421 San Pedro St, Los Angeles, CA 90015
     icon: add_home_work
+    image: /images/contact/add_home_work.svg
+    image_alt: Add Home Work icon
   phone:
     heading: Phone
     cell: (546) 232 - 9872
@@ -18,14 +20,16 @@ value:
     image_alt: send-box
   form:
     heading: Say Hello
-    icon: contact_mail
+    image: /images/contact/contact_mail.svg
+    image_alt: Contact mail icon
     fullname:
       heading: Full Name
       placeholder: Enter First Name
     phone_number:
       heading: Phone number
       placeholder: Enter Phone Number
-      icon: add_call
+      image: /images/contact/call-add.svg
+      image_alt: call-add
     email:
       heading: Email Address
       placeholder: Enter Email Address
