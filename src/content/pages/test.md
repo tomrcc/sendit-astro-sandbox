@@ -27,5 +27,8 @@ content_blocks:
    -
     title: Second
     description: Lorem ipsum
+   -
+    title: New
+    description: ''
   _name: global/faq
 ---
