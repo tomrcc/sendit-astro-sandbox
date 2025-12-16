@@ -77,7 +77,7 @@ const iframeClasses = responsive ? "absolute top-0 left-0 w-full h-full border-0
 const containerClasses = `${wrapperClasses} ${className}`.trim();
 
 // Get the path to this component's data for editable regions
-const propPath = Astro.props['data-prop'];
+const propPath = Astro.props;
 const componentName = Astro.props['data-component'];
 ---
 
