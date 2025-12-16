@@ -5,7 +5,6 @@ value:
   address:
     heading: Office Address
     address: 1421 San Pedro St, Los Angeles, CA 90015
-    icon: add_home_work
     image: /images/contact/add_home_work.svg
     image_alt: Add Home Work icon
   phone:
@@ -20,16 +19,12 @@ value:
     image_alt: send-box
   form:
     heading: Say Hello
-    image: /images/contact/contact_mail.svg
-    image_alt: Contact mail icon
     fullname:
       heading: Full Name
       placeholder: Enter First Name
     phone_number:
       heading: Phone number
       placeholder: Enter Phone Number
-      image: /images/contact/call-add.svg
-      image_alt: call-add
     email:
       heading: Email Address
       placeholder: Enter Email Address
@@ -40,11 +35,19 @@ value:
       text: Send message
   _name: contact/form
 _inputs:
+  form:
+    options:
+      preview:
+        icon: contact_mail
   fullname:
     options:
       preview:
         icon: person
   phone:
+    options:
+      preview:
+        icon: phone
+  phone_number:
     options:
       preview:
         icon: phone
