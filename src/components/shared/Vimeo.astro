@@ -78,7 +78,6 @@ const containerClasses = `${wrapperClasses} ${className}`.trim();
 
 // Get the path to this component's data for editable regions
 const propPath = Astro.props;
-const componentName = Astro.props['data-component'];
 ---
 
 <div 
@@ -86,7 +85,7 @@ const componentName = Astro.props['data-component'];
   id={componentId}
   data-editable="component"
   data-prop={propPath}
-  data-component={componentName || "shared/Vimeo"}
+  data-component={"shared/Vimeo"}
 >
   <iframe
     src={lazyLoad ? undefined : embedUrl}
