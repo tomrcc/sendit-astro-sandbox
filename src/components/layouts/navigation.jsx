@@ -385,7 +385,7 @@ export default function Navigation({ pageUrl }) {
                           className={`block px-10 lg:px-5 py-3 text-2xl lg:text-xl font-normal lg:rounded-lg transition-colors duration-200 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset ${pageUrl?.pathname === item.link ? "text-primary" : "text-gray-700"}`}
                           onClick={closeMobileMenu}
                           role="menuitem"
-                          data-editable="array-item"
+                          // data-editable="array-item"
                         >
                           <editable-text data-prop="text">
                             {item.text}
