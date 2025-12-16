@@ -61,7 +61,7 @@ content_blocks:
     video:
       image: /images/works/banner.jpg
       image_alt: Thumbnail image for video
-      link: https://vimeo.com/45830194
+      video_url: https://vimeo.com/45830194
   - _name: about/team
     title: Our leadership team
     team_members:

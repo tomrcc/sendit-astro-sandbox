@@ -16,7 +16,7 @@ interface ButtonType {
 interface VideoType {
   image: string;
   image_alt: string;
-  link: string;
+  video_url: string;
 }
 
 interface Props {
@@ -38,9 +38,9 @@ const { title, description, button, video } = Astro.props;
     </div>
 
     <!-- Main content - Vimeo embed -->
-    <div class="aspect-video">
+    <div class="aspect-video" data-editable="component" data-prop-videoid="video_url" data-component="shared/Vimeo">
       {video && (
-        <Vimeo videoId={video.link} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
+        <Vimeo videoid={video.video_url} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
       )}
     </div>
   </Modal>
