@@ -243,7 +243,7 @@ export default function Navigation({ pageUrl }) {
                     role="none"
                     data-editable="array-item"
                   >
-                    {item.enable_dropdown && item.dropdown ? (
+                    {item.enable_dropdown && item.dropdown.length ? (
                       <>
                         <button
                           ref={getDropdownButtonRef(i)}
