@@ -237,9 +237,12 @@ export default function Navigation({ pageUrl }) {
                 data-prop="@data[navigation].nav_items"
               >
                 {navigation.nav_items.map((item, i) => {
-                  console.log({ item })
-                  console.log('item.dropdown: ', item.dropdown)
-                  console.log('item.dropdown.length: ', item.dropdown.length)
+                  if (item.text == "Pricing") {
+
+                    console.log({ item })
+                    console.log('item.dropdown: ', item.dropdown)
+                    console.log('item.dropdown.length: ', item.dropdown.length)
+                  }
                   return (
                     (
                       <li
