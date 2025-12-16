@@ -14,7 +14,7 @@ content_blocks:
     description: Have a question or suggestion? Feel free to drop us a message!
   - _name: contact/form
     address:
-      heading: Office Address
+      heading: Contact Details
       address: 123 Train St, San Francisco, CA 9107
     phone:
       heading: Phone
