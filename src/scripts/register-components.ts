@@ -1,3 +1,4 @@
+/// <reference types="astro/client" />
 // Import the registration functions (commented out until needed)
 import { registerAstroComponent } from "@cloudcannon/editable-regions/astro";
 import { registerReactComponent } from "@cloudcannon/editable-regions/react";
@@ -36,6 +37,7 @@ import HomeVideo from "../components/home/video/video.astro";
 import LayoutsFooter from "../components/layouts/footer.astro";
 import PostsSummary from "../components/posts/summary.astro";
 import PricingTable from "../components/pricing/table/table.astro";
+import Vimeo from "../components/shared/Vimeo.astro";
 
 // Define component registrations with proper typing
 const astroComponentRegistrations = [
@@ -58,6 +60,7 @@ const astroComponentRegistrations = [
   { name: "blog/list", component: BlogList },
   { name: "blog/pagination", component: BlogPagination },
   { name: "global/faqItem", component: FaqItem },
+  { name: "shared/Vimeo", component: Vimeo },
 ];
 
 // Register your React components with CloudCannon
