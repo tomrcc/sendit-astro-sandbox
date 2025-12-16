@@ -84,7 +84,7 @@ const propPath = Astro.props;
   class={containerClasses} 
   id={componentId}
   data-editable="component"
-  data-prop={propPath}
+  data-prop={{...propPath}}
   data-component={"shared/Vimeo"}
 >
   <iframe
