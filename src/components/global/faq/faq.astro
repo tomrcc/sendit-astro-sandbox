@@ -57,9 +57,7 @@ const { title, title_suffix, description, FAQ } = Astro.props;
   >
     {
       FAQ?.length > 0 &&
-        FAQ.map((q: FaqItemData) => (
-          <editable-array-item data-prop="FAQ">{q.title}</editable-array-item>
-        ))
+        FAQ.map((q: FaqItemData) => <p data-editable="array-item">{q.title}</p>)
     }
   </div>
 </section>
