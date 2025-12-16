@@ -21,10 +21,8 @@ export interface Props {
     </div>
 
     <!-- Main content - Vimeo embed -->
-    <div class="aspect-video">
-      <editable-component data-editable="component" data-prop="videoId" data-component="shared/Vimeo">
-        <Vimeo videoId={video_url} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
-      </editable-component>
+    <div class="aspect-video" data-editable="component" data-prop-videoid="video_url" data-component="shared/Vimeo">
+      <Vimeo videoid={video_url} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
     </div>
   </Modal>
 
