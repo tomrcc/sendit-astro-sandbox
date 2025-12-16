@@ -38,7 +38,7 @@ const { title, description, button, video } = Astro.props;
     </div>
 
     <!-- Main content - Vimeo embed -->
-    <div class="aspect-video" data-editable="component" data-prop-videoid="video_url" data-component="shared/Vimeo">
+    <div class="aspect-video" data-editable="component" data-prop-videoid="video" data-component="shared/Vimeo">
       {video && (
         <Vimeo videoid={video.video_url} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
       )}
