@@ -23,13 +23,8 @@
     {
       "link": "/about/",
       "text": "About",
-      "enable_dropdown": true,
-      "dropdown": [
-        {
-          "dropdown_text": "A dropdown item",
-          "dropdown_link": "/ae/"
-        }
-      ]
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
       "link": "/blog/",
