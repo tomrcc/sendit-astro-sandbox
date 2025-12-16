@@ -3,7 +3,7 @@ import Modal from "@components/shared/Modal.astro";
 import Vimeo from "@components/shared/Vimeo.astro";
 import { Image } from "astro:assets";
 
-const { image, image_alt, video_url, _name } = Astro.props;
+const { image, image_alt, video_url } = Astro.props;
 
 export interface Props {
   image: string;
@@ -22,7 +22,9 @@ export interface Props {
 
     <!-- Main content - Vimeo embed -->
     <div class="aspect-video">
-      <Vimeo videoId={video_url} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
+      <editable-component data-editable="component" data-prop="videoId" data-component="shared/Vimeo">
+        <Vimeo videoId={video_url} title="Video Player" responsive={true} autoplay={true} class="w-full h-full" />
+      </editable-component>
     </div>
   </Modal>
 
