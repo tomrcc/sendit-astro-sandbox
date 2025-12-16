@@ -4,10 +4,12 @@ import { useBodyScrollLock } from "../../hooks/useBodyScrollLock";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useKeyPress } from "../../hooks/useKeyPress";
 import { useSticky } from "../../hooks/useSticky";
+import Button from "../shared/Button.astro";
 
 export default function Navigation({ pageUrl }) {
   const isSticky = useSticky();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const nav_btn = navigation.nav_btn ?? {};
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -389,17 +391,14 @@ export default function Navigation({ pageUrl }) {
                   {/* Mobile nav button - shown inside mobile menu */}
                   {navigation.enable_nav_btn && isMobileMenuOpen ? (
                     <div className="flex justify-center lg:hidden">
-                      <a
-                        data-astro-prefetch
-                        href={`${navigation.nav_btn?.link}`}
-                        className="inline-flex mb-2 items-center px-6 py-3 text-base bg-secondary lg:rounded-2xl font-normal text-primary hover:bg-primary hover:text-secondary border border-primary rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      <Button
+                        href={`${nav_btn?.link}`}
                         onClick={closeMobileMenu}
                         role="menuitem"
-                      >
-                        <editable-text data-prop="@data[navigation].nav_btn.text">
-                          {navigation.nav_btn?.text}
-                        </editable-text>
-                      </a>
+                        variant="secondary"
+                        size="lg"
+                        text={nav_btn?.text}
+                      />
                     </div>
                   ) : null}
                 </li>
@@ -407,15 +406,12 @@ export default function Navigation({ pageUrl }) {
             </div>
             {navigation.enable_nav_btn ? (
               <div className="hidden lg:block">
-                <a
-                  data-astro-prefetch
-                  href={`${navigation.nav_btn?.link}`}
-                  className="inline-flex items-center px-6 py-3 text-base font-normal text-primary bg-secondary hover:bg-primary hover:text-secondary  border border-primary rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                >
-                  <editable-text data-prop="@data[navigation].nav_btn.text">
-                    {navigation.nav_btn?.text}
-                  </editable-text>
-                </a>
+                <Button
+                  href={nav_btn?.link}
+                  variant="secondary"
+                  size="lg"
+                  text={nav_btn?.text}
+                />
               </div>
             ) : null}
           </div>
