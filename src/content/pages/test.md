@@ -11,25 +11,21 @@ seo:
  no_index: false
 content_blocks:
  -
-  _name: about/hero
-  title: On a mission to change email marketing
+  title: Have
+  title_suffix: Questions?
   description: >-
-   We're here to breathe new air into email marketing and help grow your
-   business.
-  hero_images:
+   We believe that a good email marketing strategy is the key to growth. So
+   we’re helping you grow your business with tools and resources that make email
+   marketing easy.
+  FAQ:
    -
-    image: /images/about/aboutfeature-two.jpg
-    image_alt: People working on laptops
-    placement: front_bottom
+    title: First
+    description: >-
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illo quasi
+     quia doloremque dignissimos rerum perspiciatis, officiis optio natus
+     beatae!
    -
-    image: /images/about/aboutfeature-three.jpg
-    image_alt: Group working on a laptop
-    placement: back_top_right
-   -
-    image: /images/about/aboutfeature-four.jpg
-    image_alt: Staff group photo
-    placement: back_top_left
-  button:
-   text: Try This Free
-   link: /signup
+    title: Second
+    description: Lorem ipsum
+  _name: global/faq
 ---
