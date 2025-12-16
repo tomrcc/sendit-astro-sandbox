@@ -12,8 +12,6 @@ export interface Props {
   preventTabAutoplay?: boolean;
   lazyLoad?: boolean;
   class?: string;
-  "data-prop"?: string;
-  "data-component"?: string;
 }
 
 const {
@@ -29,10 +27,7 @@ const {
   preventTabAutoplay = true,
   lazyLoad = true,
   class: className = "",
-  ...rest 
 } = Astro.props;
-
-const { "data-prop": dataProp, ...elementRest } = rest;
 
 // Extract video ID from full Vimeo URL if provided
 function extractVimeoId(url: string): string {
@@ -79,8 +74,6 @@ const iframeClasses = responsive ? "absolute top-0 left-0 w-full h-full border-0
 
 const containerClasses = `${wrapperClasses} ${className}`.trim();
 
-// Get the path to this component's data for editable regions
-const propPath = Astro.props;
 ---
 
 <div 
