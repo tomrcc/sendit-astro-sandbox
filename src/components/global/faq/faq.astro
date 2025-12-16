@@ -1,5 +1,7 @@
 ---
 import MarkdownIt from "markdown-it";
+import Heading from "../../shared/Heading.astro";
+import FaqItem from "./faqItem.astro";
 const md = new MarkdownIt({ html: true });
 
 // Define TypeScript interfaces
@@ -15,11 +17,11 @@ interface Props {
   FAQ: FaqItemData[];
 }
 
-const { title_suffix, description, FAQ } = Astro.props;
+const { title, title_suffix, description, FAQ } = Astro.props;
 ---
 
 <section class="py-16 xl:py-24 2xl:py-32 bg-primary/10">
-  <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-center">
       <div class="w-full lg:w-2/3 text-center">
         <div class="mb-12 xl:mb-16">
@@ -49,24 +51,5 @@ const { title_suffix, description, FAQ } = Astro.props;
         </div>
       </div>
     </div>
-  </div> -->
-  <div
-    class="mt-7 max-w-7xl mx-auto p-4 space-y-4 grid gap-3 bg-white"
-    data-editable="array"
-    data-prop="FAQ"
-  >
-    <template>
-      <p data-editable="text" data-prop="title">Nothing here yet</p>
-    </template>
-    {
-      FAQ?.length > 0 &&
-        FAQ.map((q: FaqItemData) => (
-          <editable-array-item>
-            <p data-editable="text" data-prop="title">
-              {q.title}
-            </p>
-          </editable-array-item>
-        ))
-    }
   </div>
 </section>
