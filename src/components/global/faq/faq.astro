@@ -55,9 +55,9 @@ const { title_suffix, description, FAQ } = Astro.props;
     data-editable="array"
     data-prop="FAQ"
   >
-    <!-- <template>
-      <p data-editable="text" data-prop="title"></p>
-    </template> -->
+    <template>
+      <p data-editable="text" data-prop="title">Nothing here yet</p>
+    </template>
     {
       FAQ?.length > 0 &&
         FAQ.map((q: FaqItemData) => (
