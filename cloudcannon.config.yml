@@ -1,6 +1,7 @@
 paths:
-  uploads: public/uploads
+  uploads: public/images
   static: public
+  
 collections_config:
   posts:
     path: src/content/blog
@@ -160,6 +161,7 @@ collections_config:
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
+
 collection_groups:
   - heading: Pages
     collections:
@@ -170,6 +172,7 @@ collection_groups:
   - heading: Site Settings
     collections:
       - data
+
 _inputs:
   image:
     type: image
