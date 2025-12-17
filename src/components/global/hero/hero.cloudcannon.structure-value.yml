@@ -23,6 +23,7 @@ value:
 _inputs:
   hero_images:
     type: array
+    comment: Add up to three images.
     options:
       structures: _structures.hero_image
       max_items: 3
@@ -54,6 +55,15 @@ _structures:
               width: 450
               height: 450
               resize_style: crop
+        preview:
+          icon: image
+          image:
+            - key: image
+          text:
+            - key: image_alt
+            - 'Hero Image'
+          subtext:
+            - key: placement
 
 preview:
   subtext:

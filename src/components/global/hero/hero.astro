@@ -88,7 +88,7 @@ const hasSingleImage = image && image_alt;
                   data-prop-src="image"
                   data-prop-alt="image_alt"
                   src={heroImage.image}
-                  alt={heroImage.image_alt}
+                  alt={heroImage.image_alt || ""}
                   width={600}
                   height={400}
                   fetchpriority={i === 0 ? 'high' : undefined}
@@ -117,7 +117,7 @@ const hasSingleImage = image && image_alt;
             data-prop-src="image"
             data-prop-alt="image_alt"
             src={image}
-            alt={image_alt}
+            alt={image_alt || ""}
             width={1028}
             height={600}
             loading={"eager"}
