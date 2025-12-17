@@ -1,39 +1,61 @@
-label: About Hero
-description: About Hero section
+label: Hero
 icon: apps
-tags:
-- hero
+tags: []
+
 value:
+  _name: global/hero
   title: One mission to make the better marketing
   description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
   hero_images:
-  - image: /images/about/aboutfeature-two.png
-    image_alt: People working
-    placement: front_bottom
-  - image: /images/about/aboutfeature-three.png
-    image_alt: Group of people looking at a computer
-    placement: back_top_right
-  - image: /images/about/aboutfeature-four.png
-    image_alt: Staff group photo
-    placement: back_top_left
+    - image: /images/about/aboutfeature-two.png
+      image_alt: People working
+      placement: front_bottom
+    - image: /images/about/aboutfeature-three.png
+      image_alt: Group of people looking at a computer
+      placement: back_top_right
+    - image: /images/about/aboutfeature-four.png
+      image_alt: Staff group photo
+      placement: back_top_left
   button:
     text: See more
     link: "#counter-up"
-  _name: global/hero
+
 _inputs:
-  image:
-    type: image
+  hero_images:
+    type: array
     options:
-      width: 450
-      height: 450
-      resize_style: crop
+      structures: _structures.hero_image
+      max_items: 3
+      max_items_message: This component can use a maximum of three images.
   description:
     type: markdown
-  placement:
-    type: select
-    options:
-      values:
-      - front_bottom
-      - back_top_right
-      - back_top_left
-preview: null
+  
+_structures:
+  hero_image:
+    values:
+      - value:
+          image:
+          image_alt:
+          placement:
+        _inputs:
+          placement:
+            type: select
+            options:
+              values:
+                - name: Front - Bottom
+                  id: front_bottom
+                - name: Back - Top Right
+                  id: back_top_right
+                - name: Back - Top Left
+                  id: back_top_left
+          image:
+            type: image
+            options:
+              width: 450
+              height: 450
+              resize_style: crop
+
+preview:
+  subtext:
+    - key: title
+    - Add content to the Hero component

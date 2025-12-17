@@ -12,7 +12,7 @@ content_blocks:
   - _name: global/simple-hero
     title: Let's talk.
     description: Have a question or suggestion? Feel free to drop us a message!
-  - _name: contact/form
+  - _name: global/form
     address:
       heading: Contact Details
       address: 123 Train St, San Francisco, CA 9107

@@ -1,0 +1,49 @@
+label: Pricing Table
+icon: table_rows
+tags: []
+
+value:
+  _name: global/pricing-table
+  pricing_tier:
+    - tier: free
+      highlight_tier: false
+      description: For starters Includes unlimited members
+      currency_symbol: $
+      price: 0
+      has_discount: false
+      discount_price: 0
+      features:
+        - item: 1 Site Activation
+          active_feature: true
+      button:
+        link: /login
+        text: Try This Free
+
+_inputs:
+  pricing_tier:
+    type: array
+    options:
+      structures: _structures.pricing_tier
+
+_structures:
+  pricing_tier:
+    values:
+      - value:
+          tier:
+          highlight_tier:
+          description:
+          currency_symbol:
+          price:
+          has_discount:
+          discount_price:
+          features:
+          button:
+        _inputs:
+          tier:
+            type: text
+            comment: The label displayed at the top of the pricing card.
+          features:
+            type: array
+          description:
+            type: markdown
+

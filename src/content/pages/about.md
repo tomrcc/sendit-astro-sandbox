@@ -35,22 +35,22 @@ content_blocks:
     alternate_style: false
     numbers:
       - prefix: $
-        numberValue: 200
+        number: '200'
         suffix: m
         text: Venture capital raised
       - prefix:
-        numberValue: 2016
+        number: '2016'
         suffix:
         text: Established in
       - prefix:
-        numberValue: 40
+        number: '40'
         suffix: +
         text: Amazing team members
       - prefix:
-        numberValue: 4322
+        number: '4322'
         suffix: +
         text: Active users and growing
-  - _name: about/video
+  - _name: global/video-left-right
     title: We love what we do
     description: >-
       Our team has decades of experience working with email marketing campaigns
@@ -62,7 +62,7 @@ content_blocks:
       image: /images/works/banner.jpg
       image_alt: Thumbnail image for video
       video_url: https://vimeo.com/45830194
-  - _name: about/team
+  - _name: global/team
     title: Our leadership team
     team_members:
       - name: Nikolas Mcconnell

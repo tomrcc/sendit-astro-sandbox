@@ -33,7 +33,7 @@ value:
       placeholder: Any Message
     submit_button:
       text: Send message
-  _name: contact/form
+  _name: global/form
 _inputs:
   form:
     options:

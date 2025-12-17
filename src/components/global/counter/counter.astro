@@ -10,7 +10,7 @@ const { title, title_suffix, description, numbers, alternate_style } = Astro.pro
 
 interface CounterNumber {
   prefix?: string;
-  numberValue: number;
+  number: string;
   suffix?: string;
   text: string;
 }
@@ -59,7 +59,7 @@ export interface Props {
                         {number.prefix || ""}
                       </span>
                       <AnimatedNumber
-                        numberValue={number.numberValue}
+                        numberValue={Number(number.number)}
                         className="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
                         style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}
                         client:load
