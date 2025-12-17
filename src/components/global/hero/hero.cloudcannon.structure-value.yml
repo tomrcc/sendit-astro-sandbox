@@ -66,6 +66,7 @@ _structures:
             - key: placement
 
 preview:
+  text: Hero
   subtext:
     - key: title
     - Add content to the Hero component

@@ -1,25 +1,51 @@
 label: Testimonial
-description: Testimonial section
 icon: 3p
 tags: []
+
 value:
+  _name: global/testimonial
   title: We Felt Proud When People Love our
   title_suffix: Product
   description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
-  testimonials:
-    - image: /images/testimonial/logo-2.jpg
-      image_alt: Profile photo of the Head of Development
-      author: Sherlock Homes
-      designation: Head of Dev. at Company
-      message: Eget eu massa et consectetur. Mauris donec. Leo a, id sed duis proin sodales. Turpis viverra diam porttitor mattis morbi ac amet.
-  _name: global/testimonial
+  testimonials: []
+
 _inputs:
   description:
     type: markdown
-  image:
-    type: image
+  testimonials:
+    type: array
     options:
-      width: 80
-      height: 80
-      resize_style: crop
-preview: null
+      structures: _structures.testimonial
+          
+_structures:
+  testimonial:
+    values:
+      - value:
+          image: /images/testimonial/logo-2.jpg
+          image_alt: Profile photo of the Head of Development
+          author: Sherlock Homes
+          designation: Head of Dev. at Company
+          message: Eget eu massa et consectetur. Mauris donec. Leo a, id sed duis proin sodales. Turpis viverra diam porttitor mattis morbi ac amet.
+        _inputs:
+          image:
+            type: image
+            options:
+              width: 80
+              height: 80
+              resize_style: crop
+          message:
+            type: textarea
+        preview:
+          icon: format_quote
+          text:
+            - key: author
+            - Testimonial
+          subtext:
+            - key: designation
+          image:
+            - key: image
+  
+  
+  
+  
+  
