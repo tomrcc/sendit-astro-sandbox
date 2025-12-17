@@ -68,15 +68,6 @@ collections_config:
     disable_url: false
     _enabled_editors:
       - visual
-    _inputs:
-      content_blocks:
-        type: array
-        options:
-          empty_type: array
-          disable_add: false
-          disable_remove: false
-          disable_reorder: false
-        cascade: true
     add_options:
       - name: Add New Page
         icon: note_add
