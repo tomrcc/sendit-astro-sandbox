@@ -1,16 +1,16 @@
 label: FAQ
-description: FAQ section
 icon: checklist
 tags: []
+
 value:
+  _name: global/faq
   title: Have
   title_suffix: Questions?
   description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
   FAQ:
-  - title: What if I unplug all selected apps at once?
-    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illo quasi quia doloremque dignissimos rerum perspiciatis, officiis optio natus beatae!
-  _name: global/faq
+    - title: What if I unplug all selected apps at once?
+      description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illo quasi quia doloremque dignissimos rerum perspiciatis, officiis optio natus beatae!
+
 _inputs:
   description:
     type: markdown
-preview: null
