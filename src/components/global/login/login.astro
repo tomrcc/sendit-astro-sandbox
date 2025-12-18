@@ -10,7 +10,7 @@ interface FormField {
 
 interface Button {
   text: string;
-  link?: string;
+  link: string;
 }
 
 interface Props {
@@ -77,6 +77,7 @@ const { title, fullname, email, checkbox_text, log_in_button, sign_up_button } =
               variant="primary"
               size="lg"
               text={log_in_button.text}
+              href={log_in_button.link}
               data-prop="log_in_button.text"
               data-editable="text"
               class="w-full"

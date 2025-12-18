@@ -1,7 +1,18 @@
+timezone: Etc/UTC
+
+# Configure how CloudCannon commits changes on a save
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+
+# Global paths for media pickers
 paths:
   uploads: public/images
   static: public
-  
+
+# Content collections
 collections_config:
   posts:
     path: src/content/blog
@@ -134,6 +145,12 @@ collections_config:
             icon: smart_button
         hidden: '!enable_nav_btn'
         cascade: true
+      theme:
+        type: object
+        options:
+          preview:
+            icon: palette
+            text: Theme
       $.primary_color:
         type: color
         options:
@@ -153,6 +170,7 @@ collections_config:
     disable_add_folder: true
     disable_file_actions: false
 
+# Organise collections in CloudCannon sidebar
 collection_groups:
   - heading: Pages
     collections:
@@ -164,6 +182,18 @@ collection_groups:
     collections:
       - data
 
+# Configure which data is available to reference in CloudCannon config
+data_config:
+  blog-tags:
+    path: data/blog-tags.json
+  footer:
+    path: data/footer.json
+  navigation:
+    path: data/navigation.json
+  theme:
+    path: data/theme.json
+
+# Configure inputs globally across the site
 _inputs:
   content_blocks:
     type: array
@@ -283,6 +313,11 @@ _inputs:
       empty_type: array
     cascade: true
 
+# Import split config structures
+_structures_from_glob:
+  - /.cloudcannon/*.cloudcannon.structures.yml
+
+# Configure what is available to add to array and object inputs
 _structures:
   features:
     style: select
@@ -362,21 +397,3 @@ _structures:
             cascade: true
         preview:
           icon: link
-commit_templates:
-  - label: Default message
-    template_string: '[default_commit_message]'
-  - label: Custom message
-    template_string: '{message}'
-data_config:
-  blog-tags:
-    path: data/blog-tags.json
-  footer:
-    path: data/footer.json
-  navigation:
-    path: data/navigation.json
-  theme:
-    path: data/theme.json
-timezone: Etc/UTC
-
-_structures_from_glob:
-  - /.cloudcannon/*.cloudcannon.structures.yml

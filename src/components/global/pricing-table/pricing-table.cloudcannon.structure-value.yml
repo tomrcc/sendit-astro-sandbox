@@ -30,7 +30,7 @@ _structures:
     values:
       - value:
           tier:
-          highlight_tier:
+          highlight_tier: false
           description:
           currency_symbol:
           price:
@@ -38,12 +38,48 @@ _structures:
           discount_price:
           features:
           button:
+            link: 
+            text:
         _inputs:
           tier:
             type: text
             comment: The label displayed at the top of the pricing card.
-          features:
-            type: array
+          highlight_tier:
+            type: switch
+          has_discount:
+            type: switch
+          discount_price:
+            type: number
+            hidden: '!has_discount'
           description:
             type: markdown
-
+          currency_symbol:
+            type: text
+            hidden: '!price'
+          features:
+            type: array
+            options:
+              structures: _structures.feature
+          button:
+            type: object
+            options:
+              preview:
+                text:
+                  - key: text
+                subtext:
+                  - key: link
+        _structures:
+          feature:
+            values:
+              - value:
+                  item: 
+                  active_feature: true
+                _inputs:
+                  active_feature:
+                    type: switch
+        preview:
+          icon: checklist
+          text:
+            - key: tier
+          subtext:
+            - template: '{currency_symbol}{price}'

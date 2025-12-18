@@ -1,8 +1,9 @@
 label: Sign Up
-description: Login section
 icon: login
 tags: []
+
 value:
+  _name: global/signup
   title: Create Account
   form:
     fullname:
@@ -20,8 +21,15 @@ value:
     log_in_button:
       link: /login
       text: Log In
-  _name: global/signup
+
 _inputs:
+  form:
+    type: object
+    options:
+      preview:
+        icon: contact_phone
+  checkbox_text:
+    type: textarea
   fullname:
     options:
       preview:
@@ -42,4 +50,7 @@ _inputs:
     options:
       preview:
         icon: login
-preview: null
+        text:
+          - key: text
+        subtext:
+          - key: link

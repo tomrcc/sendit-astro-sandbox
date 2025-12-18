@@ -1,8 +1,9 @@
 label: Login
-description: Login section
 icon: login
 tags: []
+
 value:
+  _name: global/login
   title: Log In
   fullname:
     heading: Full Name
@@ -12,11 +13,12 @@ value:
     placeholder: Your Email
   checkbox_text: Remember Me
   log_in_button:
+    link: /login/
     text: Log In
   sign_up_button:
-    link: /signup
+    link: /signup/
     text: Create an Account
-  _name: global/login
+
 _inputs:
   fullname:
     options:
@@ -34,4 +36,3 @@ _inputs:
     options:
       preview:
         icon: border_color
-preview: null

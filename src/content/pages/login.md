@@ -19,6 +19,7 @@ content_blocks:
       placeholder: Your Email
     checkbox_text: Remember Me
     log_in_button:
+      link: "/login/"
       text: "Log In"
     sign_up_button:
       link: "/signup"
