@@ -72,6 +72,7 @@ collections_config:
         remove_extra_inputs: true
         name: New Post
         icon: notes
+        new_preview_url: /blog/blog-showcase/
   pages:
     path: src/content/pages
     icon: wysiwyg
