@@ -46,7 +46,7 @@ const astroComponentRegistrations = [
   { name: "global/video", component: GlobalVideo },
   { name: "global/team", component: GlobalTeam },
   { name: "global/video-left-right", component: GlobalVideoLeftRight },
-  { name: "globa/form", component: GlobalForm },
+  { name: "global/form", component: GlobalForm },
   { name: "global/faq", component: GlobalFaq },
   { name: "global/feature", component: GlobalFeature },
   { name: "global/header", component: GlobalHeader },
