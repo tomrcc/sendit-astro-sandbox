@@ -1,7 +1,9 @@
 label: Form
 icon: check_box
 tags: []
+
 value:
+  _name: global/form
   address:
     heading: Office Address
     address: 1421 San Pedro St, Los Angeles, CA 90015
@@ -33,8 +35,10 @@ value:
       placeholder: Any Message
     submit_button:
       text: Send message
-  _name: contact/form
+  
 _inputs:
+  placeholder:
+    comment: The placeholder text inside the input before a value has been entered. Does not live update.
   form:
     options:
       preview:

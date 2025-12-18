@@ -1,14 +1,16 @@
 label: Header
-description: Header section
 icon: task
 tags: []
+
 value:
+  _name: global/header
   title: Sendit
   title_suffix: Features
   description: Sendit is the most complete solution to create beautiful email designs, manage mails and send them out at the best price.
   remove_top_padding: false
-  _name: global/header
+
 _inputs:
   description:
     type: markdown
-preview: null
+  remove_top_padding:
+    type: switch

@@ -1,3 +1,0 @@
-content_blocks:
-  values_from_glob:
-    - /src/components/**/*.cloudcannon.structure-value.yml

@@ -6,10 +6,10 @@ tags:
   - showcase
 author: Markdown McEmailface
 thumb_image:
-  image: /uploads/brett-jordan-lpzy4da9aro-unsplash-1.jpg
+  image: /images/blog/brett-jordan-lpzy4da9aro-unsplash.jpg
   image_alt: Creative markdown formatting examples
 featured_image:
-  image: /uploads/brett-jordan-lpzy4da9aro-unsplash-1-1.jpg
+  image: /images/blog/brett-jordan-lpzy4da9aro-unsplash.jpg
   image_alt: Beautiful email typography
 seo:
   page_description: >-

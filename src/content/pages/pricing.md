@@ -15,7 +15,8 @@ content_blocks:
     description: >-
       Sendit is easy to get started and we have a pricing plan for businesses of
       all sizes.
-  - pricing_tier:
+  - _name: global/pricing-table
+    pricing_tier:
       - tier: Free
         highlight_tier: false
         description: Everything you need to get started.
@@ -103,12 +104,12 @@ content_blocks:
         button:
           link: /signup
           text: Try This Free
-    _name: pricing/table
-  - title: Have
+  - _name: global/faq
+    title: Have
     title_suffix: Questions?
     description: >-
       We believe that a good email marketing strategy is the key to growth. So
-      we’re helping you grow your business with tools and resources that make
+      we're helping you grow your business with tools and resources that make
       email marketing easy.
     FAQ:
       - title: Is there a maximum numbers of emails I can send each month?
@@ -123,5 +124,4 @@ content_blocks:
         description: We accept credit cards, checks, and cash.
       - title: In which currencies can I make payments?
         description: All payments are in **USD**.
-    _name: global/faq
 ---

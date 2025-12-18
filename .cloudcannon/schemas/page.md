@@ -9,7 +9,7 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _name: about/hero
+  - _name: global/hero
     title: On a mission to change email marketing
     description: We're here to breathe new air into email marketing and help grow your business.
     hero_images:
