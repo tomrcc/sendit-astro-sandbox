@@ -57,7 +57,7 @@ const { tier } = Astro.props;
         <>
           <!-- Discount Price Display -->
           <p class="text-4xl xl:text-5xl font-bold pl-4 xl:pl-6 mb-0 mr-4 z-10">
-            <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text>{tier.discount_price}
+          <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text><editable-text data-prop="discount_price">{tier.discount_price}</editable-text>
           </p>
           
           <!-- Original Price with Strikethrough -->
@@ -86,7 +86,7 @@ const { tier } = Astro.props;
           <!-- Regular Price Display -->
           <p class="text-4xl xl:text-5xl font-bold pl-4 xl:pl-6 mb-0 z-10">
             <span>
-              <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text>{tier.price}
+              <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text><editable-text data-prop="price">{tier.price}</editable-text>
             </span>
           </p>
           
@@ -104,7 +104,7 @@ const { tier } = Astro.props;
         {tier.features && tier.features.map((feature) => (
           <li 
             data-editable="array-item"
-            data-id={feature.item}
+            data-component-id={feature.item}
             data-component={feature.item}
             class={`flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight ${
               feature.active_feature 
