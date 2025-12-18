@@ -1,8 +1,8 @@
 ---
 date:
 title:
-draft: true
-author: Gerard Hopper
+draft: false
+author: 
 tags: []
 thumb_image:
   image: 
