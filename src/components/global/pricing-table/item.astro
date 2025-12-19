@@ -104,7 +104,9 @@ const { tier } = Astro.props;
         {tier.features && tier.features.map((feature) => (
         <template>
           <li 
+            data-editable="array-item"
             class={'flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight'}
+
           >
             <i 
               class={'ph-check mr-4 xl:mr-5'}
@@ -113,6 +115,7 @@ const { tier } = Astro.props;
           </li>
         </template>
           <li 
+            data-editable="array-item"
             class={`flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight ${
               feature.active_feature 
                 ? "text-gray-600" 
