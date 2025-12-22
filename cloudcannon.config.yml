@@ -44,15 +44,14 @@ collections_config:
         type: image
         options:
           resize_style: crop
-          width: 500
-          height: 413
+          expandable: true
           required: true
         cascade: true
       featured_image.image:
         type: image
         options:
           resize_style: crop
-          width: 1296
+          expandable: true
           required: true
         comment: The hero image used at the top of the page
         cascade: true
