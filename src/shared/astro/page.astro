@@ -46,7 +46,9 @@ const { content_blocks } = Astro.props;
           data-id={block._name}
           data-component={block._name}
         >
-          <Component {...block} />
+          <editable-component data-component={block._name} data-prop="">
+            <Component {...block} />
+          </editable-component>
         </div>
       );
     })
