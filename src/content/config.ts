@@ -1,4 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { glob, file } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const seoSchema = z
   .object({
@@ -35,10 +37,24 @@ const pageSchema = z.object({
   _schema: z.any().optional(),
   hidden: z.boolean().optional().default(false),
   title: z.string(),
-  page_size: z.undefined(),
   description: z.undefined(),
   seo: seoSchema,
   content_blocks: z.array(z.any()),
+});
+
+const exampleSchema = z.object({
+  _schema: z.any(),
+  title: z.any(),
+  unkeyed: z.any(),
+  keyed: z.any(),
+  empty_unkeyed: z.any(),
+  empty_keyed: z.any(),
+  multi_element_unkeyed: z.any(),
+  multi_element_keyed: z.any(),
+  empty_multi_element_unkeyed: z.any(),
+  empty_multi_element_keyed: z.any(),
+  _inputs: z.any(),
+  _structures: z.any(),
 });
 
 const paginatedCollectionSchema = z.object({
@@ -52,7 +68,8 @@ const paginatedCollectionSchema = z.object({
 });
 
 const pagesCollection = defineCollection({
-  schema: z.union([paginatedCollectionSchema, pageSchema]),
+  // loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: z.union([paginatedCollectionSchema, pageSchema, exampleSchema]),
 });
 
 export const collections = {
