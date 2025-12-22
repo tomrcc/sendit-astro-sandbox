@@ -32,12 +32,10 @@ const { title, title_suffix, description, testimonials } = Astro.props;
           <h2
             class="text-white text-3xl sm:text-4xl xl:text-5xl font-bold mb-5 leading-tight"
           >
-            <editable-text data-prop="title">{title}</editable-text>
-            <span class="text-primary">
-              <editable-text data-prop="title_suffix"
-                >{title_suffix}</editable-text
-              ></span
-            >
+            <editable-text data-prop="title" data-type="span">{title}</editable-text>
+            <span class="text-primary" data-editable="text" data-prop="title_suffix">
+              {title_suffix}
+            </span>
           </h2>
           <div
             class="text-xl md:text-2xl text-gray-300 font-medium leading-relaxed tracking-tight"
@@ -54,8 +52,8 @@ const { title, title_suffix, description, testimonials } = Astro.props;
       data-prop="testimonials"
     >
       {
-        testimonials &&
-          testimonials.map((testimonial: Testimonial, i: number) => (
+        testimonials?.map((testimonial: Testimonial, i: number) => (
+          <template>
             <div data-editable="array-item">
               <div class="bg-white p-6 rounded-xl">
                 <div class="flex items-center gap-4 mt-4 mb-4">
@@ -73,26 +71,51 @@ const { title, title_suffix, description, testimonials } = Astro.props;
                     />
                   </div>
                   <div class="flex-1">
-                    <h3 class="font-semibold text-gray-900">
-                      <editable-text data-prop="author">
-                        {testimonial.author}
-                      </editable-text>
+                    <h3 class="font-semibold text-gray-900" data-editable="text" data-prop="author">
+                      {testimonial.author}
                     </h3>
-                    <p class="text-gray-600">
-                      <editable-text data-prop="designation">
-                        {testimonial.designation}
-                      </editable-text>
+                    <p class="text-gray-600" data-editable="text" data-prop="designation">
+                      {testimonial.designation}
                     </p>
                   </div>
                 </div>
-                <p class="text-gray-700 leading-relaxed">
-                  <editable-text data-prop="message">
-                    {testimonial.message}
-                  </editable-text>
+                <p class="text-gray-700 leading-relaxed" data-editable="text" data-prop="message">
+                  {testimonial.message}
                 </p>
               </div>
             </div>
-          ))
+          </template>
+          <div data-editable="array-item">
+            <div class="bg-white p-6 rounded-xl">
+              <div class="flex items-center gap-4 mt-4 mb-4">
+                <div class="shrink-0">
+                  <Image
+                    data-editable="image"
+                    data-prop-src="image"
+                    data-prop-alt="image_alt"
+                    src={testimonial.image}
+                    alt={testimonial.image_alt}
+                    loading="lazy"
+                    width={80}
+                    height={80}
+                    class="w-20 h-20 rounded-full object-cover"
+                  />
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900" data-editable="text" data-prop="author">
+                    {testimonial.author}
+                  </h3>
+                  <p class="text-gray-600" data-editable="text" data-prop="designation">
+                    {testimonial.designation}
+                  </p>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed" data-editable="text" data-prop="message">
+                {testimonial.message}
+              </p>
+            </div>
+          </div>
+        ))
       }
     </div>
   </div>
