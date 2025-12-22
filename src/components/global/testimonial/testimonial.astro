@@ -52,7 +52,7 @@ const { title, title_suffix, description, testimonials } = Astro.props;
       data-prop="testimonials"
     >
       {
-        testimonials?.map((testimonial: Testimonial, i: number) => (
+        testimonials?.length && testimonials?.map((testimonial: Testimonial, i: number) => (
           <template>
             <div data-editable="array-item">
               <div class="bg-white p-6 rounded-xl">
