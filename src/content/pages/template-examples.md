@@ -1,4 +1,5 @@
 ---
+_schema: template_example
 title: Template examples
 unkeyed:
   - asdasd
