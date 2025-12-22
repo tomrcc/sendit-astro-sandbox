@@ -103,6 +103,13 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: true
         icon: notes
+      template_example:
+        path: .cloudcannon/schemas/template-examples.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
   data:
     path: data
     icon: data_usage
