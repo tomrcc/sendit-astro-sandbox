@@ -41,7 +41,11 @@ const { content_blocks } = Astro.props;
         return null;
       }
       return (
-        <editable-array-item data-id={block._name} data-component={block._name}><Component {...block} /></editable-array-item>
+        <editable-array-item data-id={block._name} data-component={block._name}>
+          <editable-component data-component={block._name} data-prop="">
+            <Component {...block} />
+          </editable-component>
+        </editable-array-item>
       );
     })
   }
