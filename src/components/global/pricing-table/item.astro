@@ -101,6 +101,25 @@ const { tier } = Astro.props;
     <!-- Features List -->
     <div class="px-4 xl:px-6">
       <ul class="space-y-6 mb-12" data-editable="array" data-prop="features">
+        <template>
+           <li 
+            data-editable="array-item"
+            class={`flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight ${
+              feature.active_feature 
+                ? "text-gray-600" 
+                : "text-gray-400"
+            }`}
+          >
+            <i 
+              class={`ph-check mr-4 xl:mr-5 ${
+                feature.active_feature 
+                  ? "text-primary" 
+                  : "text-gray-400"
+              }`}
+            />
+            <editable-text data-prop="item">{feature.item}</editable-text>
+          </li>
+        </template>
         {tier.features?.length && tier.features?.map((feature) => (
           <li 
             data-editable="array-item"
