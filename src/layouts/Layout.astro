@@ -79,7 +79,9 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
         });
       }
     </script>
-    <Navigation client:load pageUrl={canonicalURL} />
+    <editable-component data-component="layouts/Navigation" data-prop="@data[navigation]">
+      <Navigation client:load pageUrl={canonicalURL} />
+    </editable-component>
     <div class="flex-1">
       <slot />
     </div>
