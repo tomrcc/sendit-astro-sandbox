@@ -1,13 +1,9 @@
-label: Home Video
+label: Video
 icon: videocam
 tags: []
 
 value:
-  image: /images/video/video-thum.jpg
+  _name: global/video
+  image: /images/video/video-thum.avif
   image_alt: Thumbnail for video
   video_url: https://vimeo.com/45830194
-  _name: global/video
-
-_inputs: {}
-
-preview: null

@@ -44,6 +44,7 @@ collections_config:
         type: image
         options:
           resize_style: crop
+          prevent_resize_existing_files: true
           expandable: true
           required: true
         cascade: true
@@ -51,6 +52,7 @@ collections_config:
         type: image
         options:
           resize_style: crop
+          prevent_resize_existing_files: true
           expandable: true
           required: true
         comment: The hero image used at the top of the page

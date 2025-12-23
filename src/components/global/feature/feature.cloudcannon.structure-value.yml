@@ -22,6 +22,7 @@ _inputs:
       width: 696
       height: 752
       resize_style: crop
+      prevent_resize_existing_files: true
       expandable: true
   button:
     type: object

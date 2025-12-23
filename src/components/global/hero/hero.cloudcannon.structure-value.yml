@@ -53,6 +53,7 @@ _structures:
             type: image
             options:
               resize_style: crop
+              prevent_resize_existing_files: true
               expandable: true
         preview:
           icon: image
