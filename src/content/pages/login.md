@@ -9,7 +9,7 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _bookshop_name: global/login
+  - _name: global/login
     title: Log In
     fullname:
       heading: Full Name
@@ -19,6 +19,7 @@ content_blocks:
       placeholder: Your Email
     checkbox_text: Remember Me
     log_in_button:
+      link: "/login/"
       text: "Log In"
     sign_up_button:
       link: "/signup"

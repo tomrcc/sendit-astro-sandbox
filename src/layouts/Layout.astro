@@ -1,9 +1,10 @@
 ---
-import "../styles/theme.scss";
-import Footer from "@components/layouts/footer";
+import "../styles/global.css";
+import Footer from "@components/layouts/footer.astro";
 import Navigation from "@components/layouts/navigation";
 import { SEO } from "astro-seo";
 import site from "@data/site.json";
+import ThemeEditableWrapper from "@components/shared/ThemeEditableWrapper";
 
 export interface SEOProps {
   page_description: string | null;
@@ -22,23 +23,18 @@ export interface Props {
 
 const { seo } = Astro.props;
 const baseUrl = Astro.site;
-const title = Astro.props.title
-  ? `${Astro.props.title} | ${site.site_title}`
-  : site.site_title;
+const title = Astro.props.title ? `${Astro.props.title} | ${site.site_title}` : site.site_title;
 const description = seo?.page_description || site.description;
 const image = seo?.featured_image || site.image;
 const image_alt = seo?.featured_image_alt || site.image_alt;
 const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="/vendor/phosphor-icons/css/phosphor.css" rel="stylesheet" />
-    <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -74,16 +70,23 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
       }}
     />
   </head>
-  <body>
-    <Navigation client:load pageUrl={canonicalURL} />
-    <slot />
+  <body class="min-h-screen flex flex-col">
+    <script>
+      // Lazy load CloudCannon component registration only when in editor mode
+      if (window?.inEditorMode) {
+        import("../scripts/register-components.ts").catch((error) => {
+          console.warn("Failed to load CloudCannon component registration:", error);
+        });
+      }
+    </script>
+    <editable-component data-component="layouts/Navigation" data-prop="@data[navigation]">
+      <Navigation client:load pageUrl={canonicalURL} />
+    </editable-component>
+    <div class="flex-1">
+      <slot />
+    </div>
     <Footer />
 
-    <script src="/vendor/jQuery/jquery.min.js" is:inline></script>
-    <script src="/vendor/bootstrap/bootstrap.bundle.min.js" is:inline></script>
-    <script src="/vendor/counter-up/countup.js" is:inline></script>
-    <script src="/vendor/magnific-popup/magnific-popup.min.js" is:inline
-    ></script>
-    <script src="/js/script.js" async></script>
+    <ThemeEditableWrapper client:only="react" />
   </body>
 </html>

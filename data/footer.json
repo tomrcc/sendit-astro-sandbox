@@ -1,34 +1,8 @@
 {
   "logo": "/images/footer-logo.svg",
+  "logo_alt": "MyCompany Logo",
   "logo_url": "/",
   "copyright": "MyCompany. All rights reserved.",
-  "social": [
-    {
-      "link": "https://www.facebook.com/mycompany",
-      "icon": "ph-facebook-logo",
-      "icon_alt": "facebook"
-    },
-    {
-      "link": "https://www.instagram.com/mycompany",
-      "icon": "ph-instagram-logo",
-      "icon_alt": "instagram"
-    },
-    {
-      "link": "https://www.twitter.com/mycompany",
-      "icon": "ph-twitter-logo",
-      "icon_alt": "twitter"
-    },
-    {
-      "link": "https://www.github.com/mycompany",
-      "icon": "ph-github-logo",
-      "icon_alt": "github"
-    },
-    {
-      "link": "https://www.youtube.com/mycompany",
-      "icon": "ph-youtube-logo",
-      "icon_alt": "youtube"
-    }
-  ],
   "sections": [
     {
       "title": "Main Pages",
@@ -70,10 +44,6 @@
         {
           "text": "Contact",
           "link": "/contact/"
-        },
-        {
-          "text": "Privacy Policy",
-          "link": "/privacy/"
         }
       ]
     }

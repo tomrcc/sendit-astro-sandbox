@@ -9,13 +9,15 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _bookshop_name: contact/hero
+  - _name: global/simple-hero
     title: Let's talk.
     description: Have a question or suggestion? Feel free to drop us a message!
-  - _bookshop_name: contact/form
+  - _name: global/form
     address:
-      heading: Office Address
+      heading: Contact Details
       address: 123 Train St, San Francisco, CA 9107
+      image: /images/contact/corporate-fare.svg
+      image_alt: Work icon
     phone:
       heading: Phone
       cell: (123) 456 - 7895

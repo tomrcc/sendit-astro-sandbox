@@ -1,16 +1,15 @@
 ---
-import BlogList from "@components/blog/list";
-import BlogPagination from "@components/blog/pagination";
+import BlogList from "@components/blog/list.astro";
+import BlogPagination from "@components/blog/pagination.astro";
 import Layout from "@layouts/Layout.astro";
-import { getCollection, getEntry } from "astro:content";
+import type { Page } from "astro";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const tags: Record<string, any> = {};
   const page = await getEntry("pages", "blog");
-  const posts = await getCollection("blog");
-  posts.forEach(({ data }) =>
-    data.tags.forEach((tag: string) => (tags[tag] = true))
-  );
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  posts.forEach(({ data }) => data.tags.forEach((tag: string) => (tags[tag] = true)));
 
   return Object.keys(tags).flatMap((tag) => {
     const filteredPosts = posts.filter(({ data }) => data.tags.includes(tag));
@@ -19,6 +18,11 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
       pageSize: page?.data.page_size,
     });
   });
+}
+
+interface Props {
+  page: Page;
+  posts: CollectionEntry<"blog">[];
 }
 
 const tag = Astro.params.tag ?? "";
@@ -36,6 +40,6 @@ const filteredPosts = pagination.data;
 ---
 
 <Layout title={page.title} seo={page.seo}>
-  <BlogList page={page} posts={filteredPosts} />
+  <BlogList posts={filteredPosts} page={page} />
   <BlogPagination pagination={pagination} />
 </Layout>
