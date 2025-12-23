@@ -36,7 +36,7 @@ _structures:
           number:
             type: text
             options:
-              pattern: '[\d]*'
+              pattern: '^\d+$'
               pattern_message: Value must be only numbers.
         preview:
           icon: numbers
