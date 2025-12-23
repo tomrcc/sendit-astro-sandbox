@@ -25,6 +25,10 @@ collections_config:
       - name: Add New Page
         icon: note_add
         schema: default
+    create:
+      # as long as file_name is not a frontmatter item in the pages collection, 
+      # the editor will be prompted to enter a unique filename (which will be used as a slug)
+      path: "{file_name|slugify}.md" 
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -103,6 +107,10 @@ collections_config:
       - name: Add New Post
         icon: post_add
         schema: default
+    create:
+      # as long as file_name is not a frontmatter item in the posts collection, 
+      # the editor will be prompted to enter a unique filename (which will be used as a slug)
+      path: "{file_name|slugify}.md" 
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
