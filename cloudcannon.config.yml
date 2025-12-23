@@ -1,18 +1,6 @@
-timezone: Etc/UTC
-
-# Configure how CloudCannon commits changes on a save
-commit_templates:
-  - label: Default message
-    template_string: '[default_commit_message]'
-  - label: Custom message
-    template_string: '{message}'
-
-# Global paths for media pickers
 paths:
   uploads: public/images
   static: public
-
-# Content collections
 collections_config:
   pages:
     path: src/content/pages
@@ -26,9 +14,7 @@ collections_config:
         icon: note_add
         schema: default
     create:
-      # as long as file_name is not a frontmatter item in the pages collection, 
-      # the editor will be prompted to enter a unique filename (which will be used as a slug)
-      path: "{file_name|slugify}.md" 
+      path: '{file_name|slugify}.md'
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
@@ -54,20 +40,15 @@ collections_config:
     name: Blog Posts
     icon: newspaper
     url: /blog/[slug]/
-    new_preview_url: /blog/blog-showcase/ # If this placeholder post is removed, replace the new_preview_url with one of your own posts.
     disable_url: false
     _enabled_editors:
       - visual
       - content
     _inputs:
-      image_alt:
-        type: text
-        options:
-          empty_type: string
-        cascade: true
       draft:
-        comment: If true, this post will not be published to the built site.
         type: switch
+        comment: If true, this post will not be published to the built site.
+        cascade: true
       author:
         type: text
         options:
@@ -77,30 +58,98 @@ collections_config:
         type: image
         options:
           resize_style: crop
-          prevent_resize_existing_files: true
           expandable: true
+          prevent_resize_existing_files: true
           required: true
         cascade: true
       featured_image.image:
         type: image
         options:
           resize_style: crop
-          prevent_resize_existing_files: true
           expandable: true
+          prevent_resize_existing_files: true
           required: true
         comment: The hero image used at the top of the page
+        cascade: true
+      $.author:
+        type: text
+        options:
+          icon:
+          empty_type:
+          required: true
+          required_message:
+          min_length:
+          min_length_message:
+          max_length:
+          max_length_message:
+          pattern:
+          pattern_message:
+          min_graphemes:
+          min_graphemes_message:
+          max_graphemes:
+          max_graphemes_message:
+          min_words:
+          min_words_message:
+          max_words:
+          max_words_message:
+          locale:
+        cascade: true
+      $.thumb_image.image_alt:
+        type: textarea
+        options:
+          empty_type:
+          show_count:
+          required: true
+          required_message:
+          min_length:
+          min_length_message:
+          max_length:
+          max_length_message:
+          pattern:
+          pattern_message:
+          min_graphemes:
+          min_graphemes_message:
+          max_graphemes:
+          max_graphemes_message:
+          min_words:
+          min_words_message:
+          max_words:
+          max_words_message:
+          locale:
+        cascade: true
+      $.featured_image.image_alt:
+        type: textarea
+        options:
+          empty_type:
+          show_count:
+          required: true
+          required_message:
+          min_length:
+          min_length_message:
+          max_length:
+          max_length_message:
+          pattern:
+          pattern_message:
+          min_graphemes:
+          min_graphemes_message:
+          max_graphemes:
+          max_graphemes_message:
+          min_words:
+          min_words_message:
+          max_words:
+          max_words_message:
+          locale:
         cascade: true
     add_options:
       - name: Add New Post
         icon: post_add
         schema: default
     create:
-      # as long as file_name is not a frontmatter item in the posts collection, 
-      # the editor will be prompted to enter a unique filename (which will be used as a slug)
-      path: "{file_name|slugify}.md" 
+      path: '{file_name|slugify}.md'
     disable_add: false
     disable_add_folder: true
     disable_file_actions: false
+    new_preview_url: /blog/blog-showcase/
     schemas:
       default:
         path: .cloudcannon/schemas/post.md
@@ -156,8 +205,9 @@ collections_config:
         type: object
         options:
           preview:
-            icon: palette
             text: Theme
+            icon: palette
+        cascade: true
       $.primary_color:
         type: color
         options:
@@ -176,8 +226,6 @@ collections_config:
     disable_add: true
     disable_add_folder: true
     disable_file_actions: false
-
-# Organise collections in CloudCannon sidebar
 collection_groups:
   - heading: Pages
     collections:
@@ -186,19 +234,6 @@ collection_groups:
   - heading: Site Data
     collections:
       - data
-
-# Configure which data is available to reference in CloudCannon config
-data_config:
-  blog-tags:
-    path: data/blog-tags.json
-  footer:
-    path: data/footer.json
-  navigation:
-    path: data/navigation.json
-  theme:
-    path: data/theme.json
-
-# Configure inputs globally across the site
 _inputs:
   title:
     type: text
@@ -212,6 +247,7 @@ _inputs:
       structures:
         values_from_glob:
           - /src/components/**/*.cloudcannon.structure-value.yml
+    cascade: true
   image:
     type: image
     options:
@@ -323,12 +359,6 @@ _inputs:
       values: data.blog-tags
       empty_type: array
     cascade: true
-
-# Import split config structures
-_structures_from_glob:
-  - /.cloudcannon/*.cloudcannon.structures.yml
-
-# Configure what is available to add to array and object inputs
 _structures:
   features:
     style: select
@@ -372,7 +402,6 @@ _structures:
           dropdown:
         _inputs:
           dropdown:
-            comment: New dropdowns will be visible after a save & build.
             type: array
             options:
               structures: _structures.dropdown
@@ -380,6 +409,7 @@ _structures:
               disable_remove: false
               disable_reorder: false
             label: Dropdown Items
+            comment: New dropdowns will be visible after a save & build.
             cascade: true
         preview:
           text:
@@ -404,3 +434,20 @@ _structures:
             cascade: true
         preview:
           icon: link
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+data_config:
+  blog-tags:
+    path: data/blog-tags.json
+  footer:
+    path: data/footer.json
+  navigation:
+    path: data/navigation.json
+  theme:
+    path: data/theme.json
+timezone: Etc/UTC
+_structures_from_glob:
+  - /.cloudcannon/*.cloudcannon.structures.yml
