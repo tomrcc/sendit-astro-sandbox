@@ -46,10 +46,18 @@ _structures:
             comment: The label displayed at the top of the pricing card.
           highlight_tier:
             type: switch
+          price:
+            type: text
+            options:
+              pattern: '^\d+$'
+              pattern_message: Value must be only numbers.
           has_discount:
             type: switch
           discount_price:
-            type: number
+            type: text
+            options:
+              pattern: '^\d+$'
+              pattern_message: Value must be only numbers.
             hidden: '!has_discount'
           description:
             type: markdown
