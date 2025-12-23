@@ -53,6 +53,7 @@ _structures:
               pattern_message: Value must be only numbers.
           has_discount:
             type: switch
+            comment: Discounts will be visible after a save & build
           discount_price:
             type: text
             options:
@@ -85,6 +86,7 @@ _structures:
                 _inputs:
                   active_feature:
                     type: switch
+                    comment: Active/Inactive styles will be applied after a save & build.
         preview:
           icon: checklist
           text:
