@@ -14,12 +14,50 @@ paths:
 
 # Content collections
 collections_config:
+  pages:
+    path: src/content/pages
+    icon: wysiwyg
+    url: /[slug]/
+    disable_url: false
+    _enabled_editors:
+      - visual
+    add_options:
+      - name: Add New Page
+        icon: note_add
+        schema: default
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    schemas:
+      default:
+        path: .cloudcannon/schemas/page.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: New Page
+        icon: notes
+        new_preview_url: /
+      paginated_collection:
+        path: .cloudcannon/schemas/paginated-collection.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
+      template_example:
+        path: .cloudcannon/schemas/template-examples.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        icon: notes
   posts:
     path: src/content/blog
     name: Blog Posts
-    icon: article
+    icon: newspaper
     url: /blog/[slug]/
-    new_preview_url: /blog/blog-showcase/ # If this placeholder post is removed, replace the new_preview_url with one of your own posts.
+    new_preview_url: / # If this placeholder post is removed, replace the new_preview_url with one of your own posts.
     disable_url: false
     _enabled_editors:
       - visual
@@ -76,44 +114,6 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: true
         name: New Post
-        icon: notes
-  pages:
-    path: src/content/pages
-    icon: wysiwyg
-    url: /[slug]/
-    disable_url: false
-    _enabled_editors:
-      - visual
-    add_options:
-      - name: Add New Page
-        icon: note_add
-        schema: default
-    disable_add: false
-    disable_add_folder: true
-    disable_file_actions: false
-    schemas:
-      default:
-        path: .cloudcannon/schemas/page.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
-        name: New Page
-        icon: notes
-        new_preview_url: /
-      paginated_collection:
-        path: .cloudcannon/schemas/paginated-collection.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
-        icon: notes
-      template_example:
-        path: .cloudcannon/schemas/template-examples.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: true
         icon: notes
   data:
     path: data
@@ -187,10 +187,8 @@ collection_groups:
   - heading: Pages
     collections:
       - pages
-  - heading: Blogging
-    collections:
       - posts
-  - heading: Site Settings
+  - heading: Site Data
     collections:
       - data
 
