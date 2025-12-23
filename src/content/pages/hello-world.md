@@ -1,6 +1,6 @@
 ---
 _schema: default
-title:
+title: hey world
 seo:
   page_description:
   canonical_url:

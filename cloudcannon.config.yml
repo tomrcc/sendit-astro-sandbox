@@ -67,12 +67,6 @@ collections_config:
       - visual
       - content
     _inputs:
-      title:
-        type: text
-        options:
-          empty_type: string
-          required: true
-        cascade: true
       image_alt:
         type: text
         options:
@@ -213,6 +207,12 @@ data_config:
 
 # Configure inputs globally across the site
 _inputs:
+  title:
+    type: text
+    options:
+      empty_type: string
+      required: true
+    cascade: true
   content_blocks:
     type: array
     options:
