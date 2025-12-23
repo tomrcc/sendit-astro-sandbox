@@ -45,15 +45,15 @@ const posts = await getCollection("blog");
       <div class="w-full">
         <article class="relative">
           <div class="sm:text-center sm:mb-12 mb-6">
-            <editable-text data-prop="title" data-type="text"> 
-              <Heading
-                level={1}
-                size={2}
-                text={title}
-                label="title"
-                class="font-semibold font-sora text-gray-800 mb-6 2xl:w-3/5 xl:w-4/5 w-full mx-auto"
-              />
-            </editable-text>
+            <Heading
+              level={1}
+              size={2}
+              text={title}
+              dataEditable="text"
+              dataProp="title"
+              label="title"
+              class="font-semibold font-sora text-gray-800 mb-6 2xl:w-3/5 xl:w-4/5 w-full mx-auto"
+            />
             <div class="mb-8">
               <ul class="flex flex-wrap justify-center sm:justify-center gap-6 text-gray-600 font-semibold text-base">
                 <li class="flex items-center">
