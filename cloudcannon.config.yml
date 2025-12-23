@@ -376,12 +376,8 @@ _structures:
       - value:
           link:
           text:
-          enable_dropdown:
           dropdown:
         _inputs:
-          enable_dropdown:
-            type: switch
-            cascade: true
           dropdown:
             type: array
             options:
@@ -390,7 +386,6 @@ _structures:
               disable_remove: false
               disable_reorder: false
             label: Dropdown Items
-            hidden: '!enable_dropdown'
             cascade: true
         preview:
           text:
