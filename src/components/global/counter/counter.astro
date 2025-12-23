@@ -49,7 +49,7 @@ export interface Props {
               {numbers.map((number: CounterNumber, i: number) => (
                 <div class="relative h-full" data-editable="array-item">
                   <div
-                    class={`border-t border-r ${alternate_style ? "border-secondary" : "border-muted"} pt-10 px-8 pb-0 2xl:pt-8 2xl:px-8 xl:pt-8 xl:px-4 xl:pb-7 sm:pt-8 sm:px-0 sm:pb-7 ${i === 3 || (i === 1 && "lg:border-r-0") || (i === 3 && "lg:border-r-0") ? "lg:border-r-0" : ""} ${i >= numbers.length - (numbers.length % 4 || 4) ? "lg:border-r-0" : ""}`}>
+                    class={`pt-10 px-8 pb-0 2xl:pt-8 2xl:px-8 xl:pt-8 xl:px-4 xl:pb-7 sm:pt-8 sm:px-0 sm:pb-7`}>
                     <div class=" flex justify-center">
                       <span
                         class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"

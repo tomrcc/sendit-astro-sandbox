@@ -19,6 +19,7 @@ collections_config:
     name: Blog Posts
     icon: article
     url: /blog/[slug]/
+    new_preview_url: /blog/blog-showcase/ # If this placeholder post is removed, replace the new_preview_url with one of your own posts.
     disable_url: false
     _enabled_editors:
       - visual
@@ -35,6 +36,9 @@ collections_config:
         options:
           empty_type: string
         cascade: true
+      draft:
+        comment: If true, this post will not be published to the built site.
+        type: switch
       author:
         type: text
         options:
