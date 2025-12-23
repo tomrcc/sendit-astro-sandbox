@@ -57,7 +57,7 @@ collections_config:
     name: Blog Posts
     icon: newspaper
     url: /blog/[slug]/
-    new_preview_url: / # If this placeholder post is removed, replace the new_preview_url with one of your own posts.
+    new_preview_url: /about/ # If this placeholder post is removed, replace the new_preview_url with one of your own posts.
     disable_url: false
     _enabled_editors:
       - visual
