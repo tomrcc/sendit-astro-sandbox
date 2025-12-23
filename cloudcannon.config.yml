@@ -379,7 +379,7 @@ _structures:
           dropdown:
         _inputs:
           dropdown:
-            comment: Dropdown items will be visible after a save & build.
+            comment: New dropdowns will be visible after a save & build.
             type: array
             options:
               structures: _structures.dropdown

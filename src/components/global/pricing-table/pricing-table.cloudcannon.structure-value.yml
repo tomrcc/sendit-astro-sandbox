@@ -9,9 +9,9 @@ value:
       highlight_tier: false
       description: For starters Includes unlimited members
       currency_symbol: $
-      price: 0
+      price: '0'
       has_discount: false
-      discount_price: 0
+      discount_price: '0'
       features:
         - item: 1 Site Activation
           active_feature: true
