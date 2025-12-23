@@ -8,9 +8,22 @@ value:
   title_suffix: Questions?
   description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
   FAQ:
-    - title: What if I unplug all selected apps at once?
-      description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim illo quasi quia doloremque dignissimos rerum perspiciatis, officiis optio natus beatae!
 
 _inputs:
   description:
     type: markdown
+  FAQ:
+    type: array
+    options:
+      structures: _structures.faq_item
+
+_structures:
+  faq_item:
+    values:
+      - value:
+          title: 
+          description:
+        _inputs:
+          description:
+            type: markdown
+             
