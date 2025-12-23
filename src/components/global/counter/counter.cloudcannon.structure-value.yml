@@ -36,8 +36,8 @@ _structures:
           number:
             type: text
             options:
-              pattern: '\d'
-              pattern_message: Value must be a number.
+              pattern: '[\d]*'
+              pattern_message: Value must be only numbers.
         preview:
           icon: numbers
           text:
