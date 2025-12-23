@@ -58,12 +58,24 @@ export interface Props {
                         data-prop="prefix">
                         {number.prefix || ""}
                       </span>
-                      <AnimatedNumber
-                        numberValue={Number(number.number)}
-                        className="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
-                        style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}
-                        client:load
-                      />
+                      {
+                        ENV_CLIENT ? (
+                          <span 
+                            data-editable="text"
+                            data-prop="number"
+                            class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
+                            style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}>
+                              {number.number}
+                            </span>
+                          ) : (
+                          <AnimatedNumber
+                            numberValue={Number(number.number)}
+                            className="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
+                            style={{ fontWeight: 700, lineHeight: 1.31, letterSpacing: "0.05px" }}
+                            client:load
+                          />
+                        )
+                      }
                       <span
                         class="text-5xl font-bold text-gray-900 font-sans leading-tight tracking-wide"
                         style="font-weight: 700; line-height: 1.31; letter-spacing: 0.05px;"
