@@ -10,16 +10,21 @@ interface Props {
   [key: string]: any;
 }
 
-const { size = "base", text, markdown = false, class: className = "", ...rest } = Astro.props;
+const {
+  size = "base",
+  text,
+  markdown = false,
+  class: className = "",
+  ...rest
+} = Astro.props;
 
 // Runtime check to ensure proper usage
 const hasSlotContent = Astro.slots.has("default");
 if (text && hasSlotContent) {
-  throw new Error('Text component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.');
+  throw new Error(
+    'Text component: Cannot use both "text" prop and slot content. Use either text prop or slot, not both.',
+  );
 }
-
-// Extract CloudCannon-specific attributes for the text wrapper
-const { "data-editable": dataEditable, "data-prop": dataProp, ...elementRest } = rest;
 
 const md = new MarkdownIt({ html: true });
 
@@ -37,25 +42,15 @@ const classes = `text-gray-600 prose ${sizeStyles[size]} ${className}`;
 
 {
   text ? (
-    dataEditable && dataProp ? (
-      markdown ? (
-        <div class={classes} data-editable={dataEditable} data-prop={dataProp} set:html={md.render(text)} {...elementRest} />
-      ) : (
-        <p class={classes} {...elementRest}>
-          <editable-text data-editable={dataEditable} data-prop={dataProp}>
-            {text}
-          </editable-text>
-        </p>
-      )
-    ) : markdown ? (
-      <div class={classes} set:html={md.render(text)} {...elementRest} />
+    markdown ? (
+      <div class={classes} set:html={md.render(text)} {...rest} />
     ) : (
-      <p class={classes} {...elementRest}>
+      <p class={classes} {...rest}>
         {text}
       </p>
     )
   ) : (
-    <div class={classes} {...elementRest}>
+    <div class={classes} {...rest}>
       <slot />
     </div>
   )

@@ -33,20 +33,20 @@ const { tier } = Astro.props;
 
 <div class="w-full lg:w-1/3 px-4" data-editable="array-item">
   <div class={`bg-white rounded-xl shadow-lg border transition-all duration-300 ease-in-out p-8 xl:p-10 mb-8 lg:mb-14 ${
-    tier.highlight_tier 
-      ? "border-primary lg:-mt-10" 
+    tier.highlight_tier
+      ? "border-primary lg:-mt-10"
       : "border-white"
   }`}>
-    
+
     <!-- Card Header -->
     <h5 class={`text-2xl xl:text-3xl font-bold leading-tight mb-2 pl-4 xl:pl-6 transition-all duration-300 ${
-      tier.highlight_tier 
-        ? "text-primary" 
+      tier.highlight_tier
+        ? "text-primary"
         : "text-gray-900"
     }`}>
       <editable-text data-prop="tier">{tier.tier}</editable-text>
     </h5>
-    
+
     <p class="text-lg xl:text-xl leading-relaxed mb-6 pl-4 xl:pl-6 text-gray-600 font-medium tracking-tight">
       <editable-text data-prop="description">{tier.description}</editable-text>
     </p>
@@ -60,7 +60,7 @@ const { tier } = Astro.props;
             <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text>
             <editable-text data-prop="discount_price">{tier.discount_price}</editable-text>
           </p>
-          
+
           <!-- Original Price with Strikethrough -->
           <div class="relative flex items-center">
             <p class="text-2xl font-semibold text-gray-500 mb-0 relative z-10">
@@ -77,9 +77,9 @@ const { tier } = Astro.props;
               />
             </div>
           </div>
-          
+
           <!-- Background Shape for Discount -->
-          <div 
+          <div
             class="absolute top-2 left-[10%] w-[35%] h-full -z-10 bg-[#faaa8f] mask-[url(/images/pricing/shape-two.png)] [-webkit-mask-image:url(/images/pricing/shape-two.png)] mask-no-repeat [-webkit-mask-repeat:no-repeat]"
           />
         </>
@@ -92,9 +92,9 @@ const { tier } = Astro.props;
               <editable-text data-prop="price">{tier.price}</editable-text>
             </span>
           </p>
-          
+
           <!-- Background Shape for Regular -->
-          <div 
+          <div
             class="absolute top-2 left-[10%] w-[35%] h-full -z-10 bg-[#faaa8f] mask-[url(/images/pricing/shape-one.png)] [-webkit-mask-image:url(/images/pricing/shape-one.png)] mask-no-repeat [-webkit-mask-repeat:no-repeat]"
           />
         </>
@@ -103,39 +103,39 @@ const { tier } = Astro.props;
 
     <!-- Features List -->
     <div class="px-4 xl:px-6">
-      <ul class="space-y-6 mb-12" data-editable="array" data-prop="features">
-        {tier.features?.length && tier.features?.map((feature) => (
-          <template>
-             <li 
-              data-editable="array-item"
-              class={`flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight ${
-                feature.active_feature 
-                  ? "text-gray-600" 
-                  : "text-gray-400"
-              }`}
+        <ul class="space-y-6 mb-12" data-editable="array" data-prop="features" data-id-key="active_feature">
+        <template data-id="true">
+            <li
+                data-editable="array-item"
+                class="flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight text-gray-600"
             >
-              <i 
-                class={`ph-check mr-4 xl:mr-5 ${
-                  feature.active_feature 
-                    ? "text-primary" 
-                    : "text-gray-400"
-                }`}
-              />
-              <editable-text data-prop="item">{feature.item}</editable-text>
+                <i class="ph-check mr-4 xl:mr-5 text-primary"/>
+                <editable-text data-prop="item"></editable-text>
             </li>
-          </template>
-          <li 
+        </template>
+        <template data-id="false">
+            <li
+                data-editable="array-item"
+                class="flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight text-gray-400"
+            >
+                <i class="ph-check mr-4 xl:mr-5 text-gray-400"/>
+                <editable-text data-prop="item"></editable-text>
+            </li>
+        </template>
+        {tier.features?.length && tier.features?.map((feature) => (
+          <li
             data-editable="array-item"
+            data-id={String(feature.active_feature)}
             class={`flex items-center text-lg xl:text-xl leading-relaxed font-bold tracking-tight ${
-              feature.active_feature 
-                ? "text-gray-600" 
+              feature.active_feature
+                ? "text-gray-600"
                 : "text-gray-400"
             }`}
           >
-            <i 
+            <i
               class={`ph-check mr-4 xl:mr-5 ${
-                feature.active_feature 
-                  ? "text-primary" 
+                feature.active_feature
+                  ? "text-primary"
                   : "text-gray-400"
               }`}
             />
@@ -143,11 +143,11 @@ const { tier } = Astro.props;
           </li>
         ))}
       </ul>
-      
+
       <!-- Action Button -->
       <div class="text-center">
         {tier.button && (
-          <Button 
+          <Button
             href={tier.button.link}
             variant={tier.highlight_tier ? "primary" : "secondary"}
             size="lg"
