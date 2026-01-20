@@ -43,13 +43,13 @@ const { faq, i, ...rest } = Astro.props;
     </svg>
   </summary>
   {
-    faq?.description?.length && (
+    faq?.description && (
       <div class="px-6 pb-6 pl-18">
         <div
           class="text-gray-600 leading-relaxed prose prose-sm max-w-none"
           data-editable="text"
           data-prop="description"
-          set:html={md.render(faq.description)}
+          set:html={md.render(faq.description) || ""}
         />
       </div>
     )
