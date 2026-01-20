@@ -43,7 +43,7 @@ const { faq, i, ...rest } = Astro.props;
     </svg>
   </summary>
   {
-    faq.description.length && (
+    faq?.description?.length && (
       <div class="px-6 pb-6 pl-18">
         <div
           class="text-gray-600 leading-relaxed prose prose-sm max-w-none"
