@@ -73,6 +73,7 @@ _structures:
             type: object
             options:
               preview:
+                icon: smart_button
                 text:
                   - key: text
                 subtext:
@@ -87,6 +88,8 @@ _structures:
                   active_feature:
                     type: switch
                     comment: Active/Inactive styles will be applied after a save & build.
+                preview:
+                  icon: stars
         preview:
           icon: checklist
           text:
