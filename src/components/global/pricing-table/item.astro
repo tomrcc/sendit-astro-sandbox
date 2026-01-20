@@ -12,7 +12,7 @@ interface Button {
   text: string;
 }
 
-interface PricingTier {
+interface Props {
   tier: string;
   highlight_tier: boolean;
   description: string;
@@ -24,48 +24,44 @@ interface PricingTier {
   button?: Button;
 }
 
-interface Props {
-  tier: PricingTier;
-}
-
-const { tier } = Astro.props;
+const { tier, highlight_tier, description, currency_symbol, price, has_discount, discount_price, features, button } = Astro.props;
 ---
 
 
 <div class={`bg-white rounded-xl shadow-lg border transition-all duration-300 ease-in-out p-8 xl:p-10 mb-8 lg:mb-14 ${
-  tier.highlight_tier
+  highlight_tier
     ? "border-primary lg:-mt-10"
     : "border-white"
 }`}>
 
   <!-- Card Header -->
   <h5 class={`text-2xl xl:text-3xl font-bold leading-tight mb-2 pl-4 xl:pl-6 transition-all duration-300 ${
-    tier.highlight_tier
+    highlight_tier
       ? "text-primary"
       : "text-gray-900"
   }`}>
-    <editable-text data-prop="tier">{tier.tier}</editable-text>
+    <editable-text data-prop="tier">{tier}</editable-text>
   </h5>
 
   <p class="text-lg xl:text-xl leading-relaxed mb-6 pl-4 xl:pl-6 text-gray-600 font-medium tracking-tight">
-    <editable-text data-prop="description">{tier.description}</editable-text>
+    <editable-text data-prop="description">{description}</editable-text>
   </p>
 
   <!-- Pricing Section -->
   <div class="relative mb-8 flex items-center text-black border-t border-b border-red-100 py-4">
-    {tier.has_discount ? (
+    {has_discount ? (
       <>
         <!-- Discount Price Display -->
         <p class="text-4xl xl:text-5xl font-bold pl-4 xl:pl-6 mb-0 mr-4 z-10">
-          <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text>
-          <editable-text data-prop="discount_price">{tier.discount_price}</editable-text>
+          <editable-text data-prop="currency_symbol">{currency_symbol}</editable-text>
+          <editable-text data-prop="discount_price">{discount_price}</editable-text>
         </p>
 
         <!-- Original Price with Strikethrough -->
         <div class="relative flex items-center">
           <p class="text-2xl font-semibold text-gray-500 mb-0 relative z-10">
-            <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text>
-            <editable-text data-prop="price">{tier.price}</editable-text>
+            <editable-text data-prop="currency_symbol">{currency_symbol}</editable-text>
+            <editable-text data-prop="price">{price}</editable-text>
           </p>
           <!-- Strikethrough Vector -->
           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
@@ -88,8 +84,8 @@ const { tier } = Astro.props;
         <!-- Regular Price Display -->
         <p class="text-4xl xl:text-5xl font-bold pl-4 xl:pl-6 mb-0 z-10">
           <span>
-            <editable-text data-prop="currency_symbol">{tier.currency_symbol}</editable-text>
-            <editable-text data-prop="price">{tier.price}</editable-text>
+            <editable-text data-prop="currency_symbol">{currency_symbol}</editable-text>
+            <editable-text data-prop="price">{price}</editable-text>
           </span>
         </p>
 
@@ -122,7 +118,7 @@ const { tier } = Astro.props;
               <editable-text data-prop="item"></editable-text>
           </li>
       </template>
-      {tier.features?.length && tier.features?.map((feature) => (
+      {features?.length && features?.map((feature) => (
         <li
           data-editable="array-item"
           data-id={String(feature.active_feature)}
@@ -146,12 +142,12 @@ const { tier } = Astro.props;
 
     <!-- Action Button -->
     <div class="text-center">
-      {tier.button && (
+      {button && (
         <Button
-          href={tier.button.link}
-          variant={tier.highlight_tier ? "primary" : "secondary"}
+          href={button.link}
+          variant={highlight_tier ? "primary" : "secondary"}
           size="lg"
-          text={tier.button.text}
+          text={button.text}
           data-prop="button.text"
           data-editable="text"
         />

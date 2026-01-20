@@ -44,7 +44,7 @@ const { pricing_tier } = Astro.props;
         pricing_tier &&
           pricing_tier.map((tier) => (
             <editable-array-item class="w-full lg:w-1/3 px-4">
-              <PricingItem tier={tier} />
+              <PricingItem {...tier} />
             </editable-array-item>
           ))
       }
