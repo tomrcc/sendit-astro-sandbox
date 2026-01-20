@@ -38,17 +38,9 @@ const { pricing_tier } = Astro.props;
     <div
       class="flex flex-wrap -mx-4"
       data-editable="array"
+      data-component="global/pricing-item"
       data-prop="pricing_tier">
-      {
-        pricing_tier &&
-          pricing_tier.map((tier) => (
-            <PricingItem
-              tier={tier}
-              data-editable="array-item"
-              data-component="global/pricing-item"
-            />
-          ))
-      }
+      {pricing_tier && pricing_tier.map((tier) => <PricingItem tier={tier} />)}
     </div>
   </div>
 </section>
