@@ -35,16 +35,23 @@ const { tier, highlight_tier, description, currency_symbol, price, has_discount,
 }`}>
 
   <!-- Card Header -->
-  <h5 class={`text-2xl xl:text-3xl font-bold leading-tight mb-2 pl-4 xl:pl-6 transition-all duration-300 ${
+  <h5 
+    class={`text-2xl xl:text-3xl font-bold leading-tight mb-2 pl-4 xl:pl-6 transition-all duration-300 ${
     highlight_tier
       ? "text-primary"
       : "text-gray-900"
-  }`}>
-    <editable-text data-prop="tier">{tier}</editable-text>
+  }`}
+    data-editable="text"
+    data-prop="tier"
+  >
+    {tier}
   </h5>
 
-  <p class="text-lg xl:text-xl leading-relaxed mb-6 pl-4 xl:pl-6 text-gray-600 font-medium tracking-tight">
-    <editable-text data-prop="description">{description}</editable-text>
+  <p 
+    class="text-lg xl:text-xl leading-relaxed mb-6 pl-4 xl:pl-6 text-gray-600 font-medium tracking-tight"
+    data-prop="description"
+    data-editable="text">
+    {description}
   </p>
 
   <!-- Pricing Section -->
