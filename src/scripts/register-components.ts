@@ -37,6 +37,7 @@ import GlobalTestimonial from "../components/global/testimonial/testimonial.astr
 import GlobalVideo from "../components/global/video/video.astro";
 import LayoutsFooter from "../components/layouts/footer.astro";
 import GlobalPricingTable from "../components/global/pricing-table/pricing-table.astro";
+import GlobalPricingItem from "../components/global/pricing-table/item.astro";
 import SharedVimeo from "../components/shared/Vimeo.astro";
 
 // Define component registrations with proper typing
@@ -56,6 +57,7 @@ const astroComponentRegistrations = [
   { name: "global/testimonial", component: GlobalTestimonial },
   { name: "layouts/footer", component: LayoutsFooter },
   { name: "global/pricing-table", component: GlobalPricingTable },
+  { name: "global/pricing-item", component: GlobalPricingItem },
   { name: "blog/summary", component: BlogSummary },
   { name: "blog/list", component: BlogList },
   { name: "blog/pagination", component: BlogPagination },

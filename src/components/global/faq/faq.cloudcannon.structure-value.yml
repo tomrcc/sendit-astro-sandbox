@@ -26,4 +26,6 @@ _structures:
         _inputs:
           description:
             type: markdown
+        preview:
+          icon: question_exchange
              
