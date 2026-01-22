@@ -50,12 +50,25 @@ const hasSingleImage = image && image_alt;
 ---
 
 
-<section class="relative isolate pt-24 bg-primary/5 overflow-hidden">
+<section class="hero-image relative isolate pt-24 bg-primary/5 overflow-hidden">
   <!-- Background shape with optimized image mask -->
   <div
     class="hidden lg:block absolute top-0 left-0 -z-10 w-96 h-[671px] bg-primary/70"
     style="mask-image: url(/images/hero/hero-two-shape.avif); -webkit-mask-image: url(/images/hero/hero-two-shape.avif);">
   </div>
+
+  <noscript>
+    <style>
+      body {
+        background-color: red;
+      }
+  
+      .hero-image {
+        background-color: green;
+        color: purple;
+      }
+    </style>
+  </noscript>
 
   <!-- Second background shape -->
   <div
