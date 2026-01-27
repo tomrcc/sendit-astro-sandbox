@@ -9,6 +9,6 @@ const { title, description, text_color } = Astro.props;
 ---
 
 <div class="bg-slate-300" style=`color: ${text_color};`>
-  <h2>{title}</h2>
-  <p>{description}</p>
+  <h2 data-editable="text" data-prop="title">{title}</h2>
+  <p data-editable="text" data-prop="child.description">{description}</p>
 </div>
