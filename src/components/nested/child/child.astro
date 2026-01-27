@@ -9,6 +9,15 @@ const { title, description, text_color } = Astro.props;
 ---
 
 <div class="bg-slate-300" style=`color: ${text_color};`>
-  <h2 data-editable="text" data-prop="title">{title}</h2>
+  <!-- 
+    This has the wrong path, since it's not resetting it's context at the component level.
+    It would need child.title, or for child to be a registered component using an editable region
+  -->
+  <h4 data-editable="text" data-prop="title">{title}</h4>
+
+  <!-- 
+    This has the correct path, but makes the component less reusable across other parents
+    which may be using differently structured frontmatter (i think??)    
+  -->
   <p data-editable="text" data-prop="child.description">{description}</p>
 </div>

@@ -1,5 +1,6 @@
 ---
 import Child from "../child/child.astro";
+import RegisteredChild from "../registered-child/registered-child.astro";
 
 interface Props {
   title: string;
@@ -19,5 +20,13 @@ const { title, description, text_color, child } = Astro.props;
   <h2 data-editable="text" data-prop="title">{title}</h2>
   <p data-editable="text" data-prop="description">{description}</p>
 
+  <h3>Unregistered child here</h3>
   <Child {...child} />
+
+  <h3>Registered child here</h3>
+  <editable-component
+    data-component="nested/registered-child"
+    data-prop="child">
+    <RegisteredChild {...child} />
+  </editable-component>
 </section>

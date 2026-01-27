@@ -19,8 +19,11 @@ import ThemeSelector from "../components/shared/ThemeSelector.tsx";
 
 // Astro Components
 
+// Nested tests
 import NestedParent from "../components/nested/parent/parent.astro";
+import RegisteredChild from "../components/nested/registered-child/registered-child.astro";
 
+// Original ones
 import GlobalTeam from "../components/global/team/team.astro";
 import GlobalVideoLeftRight from "../components/global/video-left-right/video-left-right.astro";
 import BlogList from "../components/blog/list.astro";
@@ -45,7 +48,8 @@ import SharedVimeo from "../components/shared/Vimeo.astro";
 
 // Define component registrations with proper typing
 const astroComponentRegistrations = [
-  { name: "nested/parent", component: NestedParent },
+  { name: "nested/parent", component: NestedParent }, // Test
+  { name: "nested/registered-child", component: RegisteredChild }, // Test
   { name: "global/counter", component: GlobalCounter },
   { name: "global/hero", component: GlobalHero },
   { name: "global/video", component: GlobalVideo },

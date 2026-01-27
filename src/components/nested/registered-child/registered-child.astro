@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  text_color: string;
+}
+
+const { title, description, text_color } = Astro.props;
+---
+
+<div class="bg-slate-300" style=`color: ${text_color};`>
+  <h4 data-editable="text" data-prop="title">{title}</h4>
+  <p data-editable="text" data-prop="child.description">{description}</p>
+</div>
