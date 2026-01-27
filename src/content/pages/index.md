@@ -10,14 +10,6 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _name: nested/parent
-    title: A parent component
-    description: This component has nested components
-    text_color: "#000000"
-    child:
-      title: A child component
-      description: This is a nested child in a parent component
-      text_color: "#010101"
   - _name: global/hero
     title: Beautiful web campaigns
     description: >-
@@ -28,6 +20,15 @@ content_blocks:
     button:
       text: Try This Free
       link: /signup/
+  # Nested component tests here
+  - _name: nested/parent 
+    title: A parent component
+    description: This component has nested components
+    text_color: "#000000"
+    child:
+      title: A child component
+      description: This is a nested child in a parent component
+      text_color: "#010101"
   - _name: global/counter
     title: Scale your
     title_suffix: Business
