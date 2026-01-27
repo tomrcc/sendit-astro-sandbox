@@ -1,0 +1,23 @@
+---
+import Child from "../child/child.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  text_color: string;
+  child: {
+    title: string;
+    description: string;
+    text_color: string;
+  };
+}
+
+const { title, description, text_color, child } = Astro.props;
+---
+
+<section class="bg-blue-200" style=`color: ${text_color};`>
+  <h2>{title}</h2>
+  <p>{description}</p>
+
+  <Child {...child} />
+</section>
